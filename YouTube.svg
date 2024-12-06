@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1080 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="YouTube">
+        <g transform="matrix(0.808992,0,0,0.808992,115.301,107.442)">
+            <path d="M884.854,394.973L884.854,674.401C884.854,751.511 822.251,814.115 745.14,814.115L304.805,814.115C227.695,814.115 165.091,751.511 165.091,674.401L165.091,394.973C165.091,317.863 227.695,255.259 304.805,255.259L745.14,255.259C822.251,255.259 884.854,317.863 884.854,394.973Z" style="fill:white;stroke:black;stroke-width:44.56px;"/>
+        </g>
+        <g transform="matrix(-0.00898981,0.538334,-0.640893,-0.0107025,906.426,259.383)">
+            <path d="M534.709,451.001L639.518,676.011L429.9,676.011L534.709,451.001Z" style="stroke:black;stroke-width:60.9px;"/>
+        </g>
+    </g>
+</svg>

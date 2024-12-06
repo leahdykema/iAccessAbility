@@ -1,0 +1,881 @@
+@import "fonts.css";
+
+/* Media Queries */
+@media (max-width: 1100px) {
+    body {
+        margin-top: 44px;
+        margin-left: 8em;
+        margin-right: 8em;
+    }
+
+    h1 {
+        margin-top: 80px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    h4 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 300;
+        text-align: left;
+    }
+
+    ol.instructions-list {
+        margin-left: 30px;
+        list-style: decimal outside;
+    }
+
+    ul.instructions-list {
+        margin-left: 20px;
+        list-style: outside;
+    }
+
+    p.info {
+        text-align: left;
+        font-size: 17px;
+        color: #a6a6a6;
+    }
+
+    div.img-and-text {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    div.bottom-nav {
+        display: flex;
+        margin: auto;
+        font-size: 20px;
+        align-items: center;
+        justify-content: space-between;
+        width: 50%;
+    }
+
+    li.article-instructions {
+        margin-bottom: 5px;
+        font-family: "Montserrat";
+        font-size: 20px;
+        font-weight: 300;
+        text-align: left;
+    }
+
+    img.example-images {
+        margin: auto;
+        padding-top: 30px;
+        height: 300px;
+    }
+
+    img.example-images.invert {
+        margin: auto;
+        padding-top: 30px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        margin-top: 44px;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    h1 {
+        margin-top: 80px;
+        margin-bottom: 15px;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    p {
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: left;
+    }
+
+    hr {
+        width: 90%;
+    }
+
+    ol.instructions-list {
+        margin-left: 30px;
+        list-style: decimal;
+    }
+
+    ul.instructions-list {
+        margin-left: 30px;
+        list-style: outside;
+    }
+
+    p.info {
+        text-align: left;
+        font-size: 15px;
+        color: #a6a6a6;
+    }
+
+    div.img-and-text {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    div.apple-watch-restart {
+        display: block;
+    }
+
+    div.bottom-nav {
+        display: flex;
+        margin: auto;
+        font-size: 18px;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+    }
+
+    li.article-instructions {
+        margin-bottom: 5px;
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-weight: 300;
+        text-align: left;
+    }
+
+    img.example-images {
+        margin: auto;
+        padding-top: 20px;
+        height: 250px;
+    }
+
+    img.example-images.invert {
+        margin: auto;
+        padding-top: 20px;
+        height: 250px;
+    }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        cursor: default;
+        background-color: #000;
+        font-family: "Oswald";
+        font-weight: 300;
+        text-align: left;
+        color: #fff;
+        overflow: scroll;
+        margin-top: 44px;
+        margin-bottom: 44px;
+        margin-left: 15em;
+        margin-right: 15em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Montserrat";
+        font-weight: 600;
+    }
+
+    h1 {
+        margin-top: 100px;
+        margin-bottom: 25px;
+        font-size: 60px;
+    }
+
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        font-size: 40px;
+    }
+
+    h3 {
+        margin-bottom: 15px;
+        font-size: 30px;
+    }
+
+    h4 {
+        margin-bottom: 15px;
+        font-size: 25px;
+    }
+
+    p {
+        margin-bottom: 25px;
+        font-family: "Montserrat";
+        font-size: 30px;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    hr {
+        display: block;
+        margin: auto;
+        width: 100%;
+        color: #222;
+        opacity: 50%;
+    }
+
+    ol.instructions-list {
+        margin-left: 70px;
+        list-style: decimal outside;
+    }
+
+    ul.instructions-list {
+        margin-left: 60px;
+        list-style: outside;
+    }
+
+    li.article-instructions {
+        margin-bottom: 5px;
+        font-family: "Montserrat";
+        font-size: 30px;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    p.info {
+        text-align: left;
+        font-size: 20px;
+        color: #a6a6a6;
+    }
+
+    div.img-and-text {
+        display: flex;
+        margin-bottom: 25px;
+    }
+
+    div.apple-watch-restart {
+        display: flex;
+    }
+
+    div.section-1 {
+        display: block;
+    }
+
+    div.section-2 {
+        display: block;
+    }
+
+    div.disclaimer-section {
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        background-color: #222222;
+        border-radius: 20px;
+    }
+
+    div.bottom-nav {
+        display: flex;
+        margin: auto;
+        font-size: 30px;
+        align-items: center;
+        justify-content: space-between;
+        width: 50%;
+    }
+
+    img.example-images {
+        display: block;
+        height: 300px;
+        margin-left: 50px;
+        align-items: left;
+    }
+
+    img.example-images.invert {
+        display: block;
+        height: 300px;
+        margin-left: 50px;
+        align-items: left;
+        filter: invert();
+    }
+
+    /* Hidden */
+    #apple-watch-light {
+        display: none;
+    }
+
+    a.links {
+        color: #8bc3ff;
+        text-decoration: none;
+        transition: all 200ms ease;
+    }
+
+    a.links:hover,
+    a.links:focus {
+        color: #0063cc;
+        text-decoration: underline;
+    }
+
+    a.nav-link {
+        color: #8bc3ff;
+        text-decoration: none;
+        transition: all 200ms ease;
+    }
+
+    a.nav-link:hover,
+    a.nav-link:focus {
+        color: #0063cc;
+        text-decoration: underline;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1100px) {
+        body {
+            margin-top: 44px;
+            margin-left: 8em;
+            margin-right: 8em;
+        }
+
+        h1 {
+            margin-top: 80px;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        ol.instructions-list {
+            margin-left: 30px;
+            list-style: decimal outside;
+        }
+
+        ul.instructions-list {
+            margin-left: 20px;
+            list-style: outside;
+        }
+
+        p.info {
+            text-align: left;
+            font-size: 17px;
+            color: #a6a6a6;
+        }
+
+        div.img-and-text {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        div.bottom-nav {
+            display: flex;
+            margin: auto;
+            font-size: 20px;
+            align-items: center;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        li.article-instructions {
+            margin-bottom: 5px;
+            font-family: "Montserrat";
+            font-size: 20px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        img.example-images {
+            margin: auto;
+            padding-top: 30px;
+            height: 300px;
+        }
+
+        img.example-images.invert {
+            margin: auto;
+            padding-top: 30px;
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            margin-top: 44px;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+
+        h1 {
+            margin-top: 80px;
+            margin-bottom: 15px;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        hr {
+            width: 90%;
+        }
+
+        ol.instructions-list {
+            margin-left: 30px;
+            list-style: decimal;
+        }
+
+        ul.instructions-list {
+            margin-left: 30px;
+            list-style: outside;
+        }
+
+        p.info {
+            text-align: left;
+            font-size: 15px;
+            color: #a6a6a6;
+        }
+
+        div.img-and-text {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        div.apple-watch-restart {
+            display: block;
+        }
+
+        div.bottom-nav {
+            display: flex;
+            margin: auto;
+            font-size: 18px;
+            justify-content: space-between;
+            align-items: center;
+            width: 70%;
+        }
+
+        li.article-instructions {
+            margin-bottom: 5px;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        img.example-images {
+            margin: auto;
+            padding-top: 20px;
+            height: 250px;
+        }
+
+        img.example-images.invert {
+            margin: auto;
+            padding-top: 20px;
+            height: 250px;
+        }
+    }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+        body {
+        cursor: default;
+        background-color: #fff;
+        font-family: "Oswald";
+        font-weight: 300;
+        text-align: left;
+        color: #000;
+        overflow: scroll;
+        margin-top: 44px;
+        margin-bottom: 44px;
+        margin-left: 15em;
+        margin-right: 15em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Montserrat";
+        font-weight: 600;
+    }
+
+    h1 {
+        margin-top: 100px;
+        margin-bottom: 25px;
+        font-size: 60px;
+    }
+
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        font-size: 40px;
+    }
+
+    h3 {
+        margin-bottom: 15px;
+        font-size: 30px;
+    }
+
+    h4 {
+        margin-bottom: 15px;
+        font-size: 25px;
+    }
+
+    p {
+        margin-bottom: 25px;
+        font-family: "Montserrat";
+        font-size: 30px;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    hr {
+        display: block;
+        margin: auto;
+        width: 100%;
+        color: #222;
+        opacity: 50%;
+    }
+
+    ol.instructions-list {
+        margin-left: 70px;
+        list-style: decimal outside;
+    }
+
+    ul.instructions-list {
+        margin-left: 60px;
+        list-style: outside;
+    }
+
+    li.article-instructions {
+        margin-bottom: 5px;
+        font-family: "Montserrat";
+        font-size: 30px;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    p.info {
+        text-align: left;
+        font-size: 20px;
+        color: #a3a3a3;
+    }
+
+    div.img-and-text {
+        display: flex;
+        margin-bottom: 25px;
+    }
+
+    div.apple-watch-restart {
+        display: flex;
+    }
+
+    div.section-1 {
+        display: block;
+    }
+
+    div.section-2 {
+        display: block;
+    }
+
+    div.disclaimer-section {
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        background-color: #eee;
+        border-radius: 20px;
+    }
+
+    div.bottom-nav {
+        display: flex;
+        margin: auto;
+        font-size: 30px;
+        align-items: center;
+        justify-content: space-between;
+        width: 50%;
+    }
+
+    img.example-images {
+        display: block;
+        height: 300px;
+        margin-left: 50px;
+        align-items: left;
+    }
+
+    img.example-images.invert {
+        display: block;
+        height: 300px;
+        margin-left: 50px;
+        align-items: left;
+    }
+
+    /* Hidden */
+    #apple-watch-dark {
+        display: none;
+    }
+
+    a.links {
+        color: #4da3ff;
+        text-decoration: none;
+        transition: all 200ms ease;
+    }
+
+    a.links:hover,
+    a.links:focus {
+        color: #0063cc;
+        text-decoration: underline;
+    }
+
+    a.nav-link {
+        color: #4da3ff;
+        text-decoration: none;
+        transition: all 200ms ease;
+    }
+
+    a.nav-link:hover,
+    a.nav-link:focus {
+        color: #0063cc;
+        text-decoration: underline;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1100px) {
+        body {
+            margin-top: 44px;
+            margin-left: 8em;
+            margin-right: 8em;
+        }
+
+        h1 {
+            margin-top: 80px;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        ol.instructions-list {
+            margin-left: 30px;
+            list-style: decimal outside;
+        }
+
+        ul.instructions-list {
+            margin-left: 20px;
+            list-style: outside;
+        }
+
+        p.info {
+            text-align: left;
+            font-size: 17px;
+            color: #a6a6a6;
+        }
+
+        div.img-and-text {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        div.bottom-nav {
+            display: flex;
+            margin: auto;
+            font-size: 20px;
+            align-items: center;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        li.article-instructions {
+            margin-bottom: 5px;
+            font-family: "Montserrat";
+            font-size: 20px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        img.example-images {
+            margin: auto;
+            padding-top: 30px;
+            height: 300px;
+        }
+
+        img.example-images.invert {
+            margin: auto;
+            padding-top: 30px;
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            margin-top: 44px;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+
+        h1 {
+            margin-top: 80px;
+            margin-bottom: 15px;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        hr {
+            width: 90%;
+        }
+
+        ol.instructions-list {
+            margin-left: 30px;
+            list-style: decimal;
+        }
+
+        ul.instructions-list {
+            margin-left: 30px;
+            list-style: outside;
+        }
+
+        p.info {
+            text-align: left;
+            font-size: 15px;
+        }
+
+        div.img-and-text {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        div.apple-watch-restart {
+            display: block;
+        }
+
+        div.bottom-nav {
+            display: flex;
+            margin: auto;
+            font-size: 18px;
+            justify-content: space-between;
+            align-items: center;
+            width: 70%;
+        }
+
+        li.article-instructions {
+            margin-bottom: 5px;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        img.example-images {
+            margin: auto;
+            padding-top: 20px;
+            height: 250px;
+        }
+
+        img.example-images.invert {
+            margin: auto;
+            padding-top: 20px;
+            height: 250px;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Learn, receive help, and connect with iAccessAbility">
+        <meta name="author" content="Leah Dykema">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/svg" href="img/favicon.svg">
+        <title>iAccessAbility</title>
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="navbar/navbar.css">
+    </head>
+    <body>
+        <!-- Menu Nav Bar -->
+         <div data-role="header" data-position="fixed" class="nav-container">
+            <nav>
+                <!-- mobile nav -->
+                <ul class="mobile-nav">
+                    <!-- Menu icon -->
+                    <li>
+                        <div class="menu-icon-container">
+                            <button class="menu-icon">
+                                <span onclick="toggleNav()" class="line-1"></span>
+                                <span onclick="toggleNav()" class="line-2"></span>
+                            </button>
+                        </div>
+                    </li>
+                    <!-- logo -->
+                    <li>
+                        <a href="../index.html" class="link-logo"></a>
+                    </li>
+                </ul>
+                <!-- desktop nav -->
+                <ul class="desktop-nav">
+                    <!-- logo -->
+                    <li><a href="index.html" class="link-logo"></a></li>
+                    <!-- Support -->
+                    <li><a href="html/support.html">Support</a></li>
+                    <!-- Connect -->
+                    <li><a href="html/connect.html">Connect</a></li>
+                    <!-- About -->
+                    <li><a href="html/about.html">About</a></li>
+                    <!-- Resources -->
+                </ul>
+            </nav>
+        </div>
+        <!-- Home Page -->
+        <div>
+            <!-- logo -->
+            <a href="index.html">
+                <img src="img/logo-colored.svg" height="500" alt="a large image of the iAccessAbility logo" class="center">
+            </a>
+            <h1>iAccessAbility</h1>
+            <h3>Beyond Sight: Independence with Technology</h3>
+        </div>
+        <script src="navbar.js"></script>
+    </body>
+</html>
