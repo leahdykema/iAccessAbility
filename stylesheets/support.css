@@ -1,182 +1,3 @@
-/* Default theme - Dark */
-body:before {
-    content: '';
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url(../img/iAccessAbility-YT-banner-desktop.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-body {
-    background-color: #000000;
-    margin-top: 100px;
-    margin-bottom: 400px;
-    font-family: sans-serif;
-    color: #ffffff;
-    font-weight: 300;
-    overflow: scroll;
-}
-
-h1 {
-    color: #ffffff;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 150px;
-    padding: 40px;
-    margin-left: 300px;
-    margin-right: 300px;
-    background: rgb(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-}
-
-p {
-    color: #ffffff;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 40px;
-    font-weight: 500;
-    padding: 29px;
-    margin: 95px;
-    background: rgb(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-}
-
-a.support-links {
-    color: #8bc3ff;
-    display: block;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 50px;
-    font-weight: 900;
-    text-decoration: none;
-    margin-left: 350px;
-    margin-right: 350px;
-    padding: 20px;
-    background: rgb(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    transition: all 200ms;
-}
-
-a.support-links:hover,
-a.support-links:focus {
-    color: #0063cc;
-    text-decoration: underline;
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-    body:before {
-        content: '';
-        display: block;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: -1;
-        background-image: url(../img/iAccessAbility-YT-banner-desktop.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    body {
-        margin-top: 90px;
-    }
-
-    h1 {
-        margin-left: 1.1em;
-        margin-right: 1.1em;
-        padding: 20px;
-        font-size: 130px;
-        background: rgb(0, 0, 0, 0.5);
-        backdrop-filter: blur(8px);
-    }
-
-    p {
-        margin-left: 0.4em;
-        margin-right: 0.4em;
-        margin-bottom: 1em;
-        background: rgb(0, 0, 0, 0.5);
-        backdrop-filter: blur(8px);
-    }
-
-    a.support-links {
-        color: #8bc3ff;
-        display: block;
-        text-align: center;
-        font-family: sans-serif;
-        font-size: 40px;
-        font-weight: 900;
-        text-decoration: none;
-        margin-left: 200px;
-        margin-right: 200px;
-        padding: 20px;
-        background: rgb(0, 0, 0, 0.5);
-        backdrop-filter: blur(8px);
-    }
-}
-
-@media (max-width: 768px) {
-    body:before {
-        content: '';
-        display: block;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: -1;
-        background-image: url(../img/iAccessAbility-YT-banner.PNG);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    body {
-        margin-top: 80px;
-    }
-
-    h1 {
-        font-size: 70px;
-        margin-left: 0.4em;
-        margin-right: 0.4em;
-        margin-bottom: 0.1em;
-        padding: 20px;
-        background: rgb(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
-    }
-
-    p {
-        font-size: 20px;
-        margin-top: 1em;
-        margin-left: 1em;
-        margin-right: 1em;
-        margin-bottom: 1em;
-        background: rgb(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
-    }
-
-    a.support-links {
-        display: block;
-        text-align: center;
-        font-family: sans-serif;
-        color: #8bc3ff;
-        font-size: 25px;
-        font-weight: 900;
-        text-decoration: none;
-        margin-left: 70px;
-        margin-right: 70px;
-        padding: 20px;
-        background: rgb(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
-    }
-}
-
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
     body:before {
@@ -194,11 +15,11 @@ a.support-links:focus {
     }
 
     body {
-        background-color: #000000;
+        background-color: #000;
         margin-top: 100px;
         margin-bottom: 400px;
         font-family: sans-serif;
-        color: #ffffff;
+        color: #fff;
         font-weight: 300;
         overflow: scroll;
     }
@@ -212,7 +33,7 @@ a.support-links:focus {
         margin-left: 300px;
         margin-right: 300px;
         background: rgb(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(8px);
     }
 
     p {
@@ -223,8 +44,8 @@ a.support-links:focus {
         font-weight: 500;
         padding: 29px;
         margin: 95px;
-        background: rgb(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
+        background: rgb(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
     }
 
     a.support-links {
@@ -238,8 +59,8 @@ a.support-links:focus {
         margin-left: 350px;
         margin-right: 350px;
         padding: 20px;
-        background: rgb(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
+        background: rgb(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
         transition: all 200ms;
     }
 
