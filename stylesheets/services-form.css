@@ -23,6 +23,12 @@
         font-size: 50px;
     }
 
+    div.agree-section {
+        display: inline;
+        margin: 0 auto;
+        align-content: center;
+    }
+
     div.form {
         display: block;
         text-align: center;
