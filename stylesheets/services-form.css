@@ -1,0 +1,304 @@
+@import "fonts.css";
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        font-family: sans-serif;
+        font-weight: 300;
+        color: #fff;
+        overflow: scroll;
+        margin-top: 44px;
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        margin-top: 20%;
+        margin-bottom: 0;
+        font-family: sans-serif;
+        font-weight: 500;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    div.form {
+        display: block;
+        text-align: center;
+    }
+    
+    form {
+        display: inline-block;
+        margin: 2%;
+        padding: 5%;
+        border-radius: 3%;
+        border: 1px solid #444;
+        align-content: center;
+        font-size: 15px;
+    }
+
+    label {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    input {
+        background-color: #222;
+        margin: 1%;
+        padding: 2px;
+        font-size: 15px;
+        align-content: center;
+        border: none;
+        color: #fff;
+        transition: 200ms;
+    }
+
+    input:hover,
+    input:focus {
+        scale: 1.2;
+    }
+    
+    input.submit {
+        background-color: #0063cc;
+        border-radius: 5px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: 200ms;
+    }
+    
+    input.submit:hover,
+    input.submit:focus {
+        scale: 1.2;
+        background-color: #0040cc;
+    }
+    
+    select {
+        background-color: #222;
+        padding: 2px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+        background-repeat: no-repeat;
+        background-position: right .7em top 50%;
+        background-size: .65em auto;
+        border: none;
+        font-size: 15px;
+        color: #fff;
+        transition: 200ms;
+    }
+
+    select:hover,
+    select:focus {
+        scale: 1.2;
+    }
+
+    .submit {
+        margin: 20px;
+    }
+    
+    a.links {
+        color: #8bc3ff;
+        text-decoration: none;
+        transition: all 300ms;
+    }
+
+    a.links:hover,
+    a.links:focus {
+        color: #0063cc;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 1100px) {
+        body {
+            margin-top: 0;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            margin-top: 56px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 15px;
+        }
+        
+        label, input, select {
+            font-size: 15px;
+        }
+    }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #fff;
+        font-family: sans-serif;
+        font-weight: 300;
+        color: #000;
+        overflow: scroll;
+        margin-top: 44px;
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        margin-top: 20%;
+        margin-bottom: 0;
+        font-family: sans-serif;
+        font-weight: 500;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    div.form {
+        display: block;
+        text-align: center;
+    }
+    
+    form {
+        display: inline-block;
+        margin: 2%;
+        padding: 5%;
+        border-radius: 3%;
+        border: 1px solid #ccc;
+        align-content: center;
+        font-size: 15px;
+    }
+
+    label {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    input {
+        background-color: #eee;
+        margin: 1%;
+        padding: 2px;
+        font-size: 15px;
+        align-content: center;
+        border: none;
+        color: #000;
+        transition: 200ms;
+    }
+
+    input:hover,
+    input:focus {
+        scale: 1.2;
+    }
+    
+    input.submit {
+        background-color: #8bc3ff;
+        border-radius: 5px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: 200ms;
+    }
+    
+    input.submit:hover,
+    input.submit:focus {
+        scale: 1.2;
+        background-color: #0063cc;
+        color: #fff;
+    }
+    
+    select {
+        background-color: #eee;
+        padding: 2px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+        background-repeat: no-repeat;
+        background-position: right .7em top 50%;
+        background-size: .65em auto;
+        border: none;
+        font-size: 15px;
+        color: #000;
+        transition: 200ms;
+    }
+
+    select:hover,
+    select:focus {
+        scale: 1.2;
+    }
+
+    .submit {
+        margin: 20px;
+    }
+    
+    a.links {
+        color: #8bc3ff;
+        text-decoration: none;
+        transition: all 300ms;
+    }
+
+    a.links:hover,
+    a.links:focus {
+        color: #0063cc;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 1100px) {
+        body {
+            margin-top: 0;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            margin-top: 56px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 15px;
+        }
+        
+        label, input, select {
+            font-size: 15px;
+        }
+    }
+}
