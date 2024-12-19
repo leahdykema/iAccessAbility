@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Leah Dykema">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../img/logo.svg">
+        <title>Services - iAccessAbility</title>
+        <link rel="stylesheet" href="../stylesheets/services-form.css">
+        <link rel="stylesheet" href="../navbar/navbar.css">
+    </head>
+    <body>
+        <!-- Menu Nav Bar -->
+        <div data-role="header" data-position="fixed" class="nav-container">
+            <nav>
+                <!-- mobile nav -->
+                <ul class="mobile-nav">
+                    <!-- Menu icon -->
+                    <li>
+                        <div class="menu-icon-container">
+                            <button class="menu-icon">
+                                <span onclick="toggleNav()" class="line-1"></span>
+                                <span onclick="toggleNav()" class="line-2"></span>
+                            </button>
+                        </div>
+                    </li>
+                    <!-- logo -->
+                    <li>
+                        <a href="../index.html" class="link-logo"></a>
+                    </li>
+                </ul>
+                <!-- desktop nav -->
+                <ul class="desktop-nav">
+                    <!-- logo -->
+                    <li><a href="../index.html" class="link-logo"></a></li>
+                    <!-- Support -->
+                    <li><a href="support.html">Support</a></li>
+                    <!-- Connect -->
+                    <li><a href="connect.html">Connect</a></li>
+                    <!-- About -->
+                    <li><a href="about.html">About</a></li>
+                    <!-- Resources -->
+                </ul>
+            </nav>
+        </div>
+        <!-- Services Form -->
+        <div class="site">
+            <h2>Request Services</h2>
+            <!-- Action needed for working -->
+            <div class="form">
+                <form action="#">
+                    <label>First Name&#58;</label>
+                    <input type="text" name="name" size="15" maxlength="15" placeholder="John">
+                    <br>
+                    <label>Last Name&#58;</label>
+                    <input type="text" name="name" size="15" maxlength="15" placeholder="Appleseed">
+                    <br>
+                    <label>Phone&#58;</label>
+                    <input type="tel" name="phone" size="15" placeholder="(515) 497-0292">
+                    <br>
+                    <label>Email&#58;</label>
+                    <input type="email" name="email" size="22" placeholder="johnappleseed@example.com">
+                    <br>
+                    <label>Service Request&#58;</label>
+                    <select length="2">
+                        <option selected disabled>Select a Service</option>
+                        <option value="Tech Support">Tech Support</option>
+                        <option value="Personalized Consulting">Buying Consulting</option>
+                        <option value="One-on-One Training">One&#45;on&#45;One Training</option>
+                    </select>
+                    <br>
+                    <input type="submit" name="request" value="Request Service" class="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
