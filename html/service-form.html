@@ -76,9 +76,20 @@
                         </label>
                     </div>
                     <br>
-                    <input type="submit" name="request" value="Request Service" class="submit">
+                    <input type="submit" name="request" value="Request Service" class="submit" id="btn" disabled>
                 </form>
             </div>
         </div>
+        <script>
+            // Get references to the checkbox and submit button
+            const checkbox = document.getElementById('agreement');
+            const submitButton = document.getElementById('btn');
+
+            // Add an event listener to the checkbox
+            checkbox.addEventListener('change', function () {
+                // Enable or disable the submit button based on checkbox state
+                submitButton.disabled = !checkbox.checked;
+            });
+        </script>
     </body>
 </html>
