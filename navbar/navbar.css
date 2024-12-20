@@ -115,6 +115,7 @@
         }
 
         .nav-container .desktop-nav {
+            display: none;
             flex-direction: column;
             position: fixed;
             top: 0;
@@ -129,6 +130,7 @@
         }
 
         .nav-container.active .desktop-nav {
+            display: flex;
             height: 100vh;
         }
 
@@ -359,6 +361,7 @@
         }
 
         .nav-container .desktop-nav {
+            display: none;
             flex-direction: column;
             position: fixed;
             top: 0;
@@ -373,6 +376,7 @@
         }
 
         .nav-container.active .desktop-nav {
+            display: flex;
             height: 100vh;
         }
 
