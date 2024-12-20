@@ -81,6 +81,15 @@
             </div>
         </div>
         <script>
+            // mobile versions
+            const menuIcon = document.querySelector('.menu-icon-container');
+            const navContainer = document.querySelector(".nav-container");
+            
+            menuIcon.addEventListener("click", () => {
+                menuIcon.classList.toggle('active');
+                navContainer.classList.toggle('active');
+            });
+            
             // Get references to the checkbox and submit button
             const checkbox = document.getElementById('agreement');
             const submitButton = document.getElementById('btn');
