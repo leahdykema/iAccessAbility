@@ -8,6 +8,7 @@
         <link rel="icon" type="image/svg" href="img/favicon.svg">
         <title>iAccessAbility</title>
         <link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="stylesheets/main.css">
         <link rel="stylesheet" href="navbar/navbar.css">
     </head>
     <body>
@@ -45,23 +46,50 @@
             </nav>
         </div>
         <!-- Home Page -->
-        <div>
-            <!-- logo -->
-            <a href="index.html">
-                <img src="img/logo-colored.svg" height="500" alt="a large image of the iAccessAbility logo" class="center">
-            </a>
-            <h1>iAccessAbility</h1>
-            <h3>Beyond Sight: Independence with Technology</h3>
+        <div class="site">
+            <div>
+                <img src="img/iAccessAbility-Banner-Desktop-Homepage.png" alt="Beyond Sight, independence with technology" class="desktop-dark">
+                <img src="img/iAccessAbility-Banner-Desktop-Homepage-Inverted.png" alt="Beyond Sight, independence with technology" class="desktop-light">
+                <img src="img/iAccessAbility-Banner-Mobile-Homepage.png" alt="Beyond Sight, independence with technology" class="mobile-dark">
+                <img src="img/iAccessAbility-Banner-Mobile-Homepage-Inverted.png" alt="Beyond Sight, independence with technology" class="mobile-light">
+            </div>
+            <div>
+                <!-- Frequently Asked Questions -->
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>
+                        <b>What services do you provide&#63;</b>
+                        <br>
+                        We offer <i>tech support</i>, <i>one-on-one training</i>, and a <i>personalized consultant</i> service keeping in mind your budget and needs.
+                        <br>
+                        <a href="html/service.html">Learn more &gt;</a>
+                    </p>
+                    <p>
+                        <b>When are you open?</b>
+                        <br>
+                        You can contact us at any time and we will get back to you as soon as we can; however, calls are accepted and returned between 10&#58;00 AM and 6&#58;00 PM on weekdays and Saturdays.
+                    </p>
+                    <p>
+                        <b>How do I reset my Apple Account <sup>&#169;</sup> password?</b>
+                        <br>
+                        We have an article to help you reset your Apple Account <sup>&#169;</sup> password <a href="html/articles/forgot-apple-account-password.html">here &gt;</a>
+                    </p>
+                    <p>
+                        <b>How do I restart my iPhone?</b>
+                        We have an article to help you restart your iPhone <a href="html/articles/restart-iphone.html">here &gt;</a>
+                    </p>
+                </section>
+            </div>
         </div>
         <script>
-		// mobile versions
-		const menuIcon = document.querySelector('.menu-icon-container');
-		const navContainer = document.querySelector(".nav-container");
-	
-		menuIcon.addEventListener("click", () => {
-			menuIcon.classList.toggle('active');
-			navContainer.classList.toggle('active');
-		});
+            // mobile versions
+            const menuIcon = document.querySelector(".menu-icon-container");
+            const navContainer = document.querySelector(".nav-container");
+
+            menuIcon.addEventListener("click", () => {
+                menuIcon.classList.toggle('active');
+                navContainer.classList.toggle('active');
+            });
         </script>
     </body>
 </html>
