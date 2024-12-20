@@ -129,8 +129,9 @@
         margin-top: 20px;
         margin-bottom: 20px;
         font-family: "Montserrat";
-        text-align: center;
+        text-align: left;
         font-size: 28px;
+        font-weight: 300;
     }
     
     p:Last-child {
@@ -139,11 +140,10 @@
     
     section {
         margin: 40px auto;
-        width: 100%;
+        width: 70%;
         padding: 20px;
-        background-color: #eee;
+        background-color: #222;
         border-radius: 20px;
-        text-align: left;
     }
     
     img.desktop-light {
