@@ -142,7 +142,7 @@
         margin: 40px auto;
         width: 70%;
         padding: 20px;
-        background-color: #ddd;
+        background-color: #eee;
         border-radius: 20px;
     }
     
@@ -160,13 +160,13 @@
     
     a {
         text-decoration: none;
-        color: #8bc3ff;
+        color: #0063cc;
         transition: all 200ms ease;
     }
 
     a:hover,
     a:focus {
-        color: #0063cc;
+        color: #8bc3ff;
         transform: scale(1.4);
     }
     
