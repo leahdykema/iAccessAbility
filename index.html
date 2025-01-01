@@ -28,13 +28,13 @@
                     </li>
                     <!-- logo -->
                     <li>
-                        <a href="index.html" class="link-logo"></a>
+                        <img src="../img/logo-colored.svg" class="link-logo" href="index.html" alt="I access ability">
                     </li>
                 </ul>
                 <!-- desktop nav -->
                 <ul class="desktop-nav">
                     <!-- logo -->
-                    <li><a href="index.html" class="link-logo"></a></li>
+                    <li><img src="../img/logo-colored.svg" class="link-logo" href="index.html" alt="I access ability"></li>
                     <!-- Support -->
                     <li><a href="html/support.html">Support</a></li>
                     <!-- Connect -->
@@ -95,10 +95,10 @@
                 // Toggle the 'active' class on navContainer and navMenu
                 const isOpen = navContainer.classList.toggle("active");
                 navMenu.classList.toggle("active", isOpen);
-
+                
                 // Update aria-expanded attribute for the button
                 toggleButton.setAttribute("aria-expanded", isOpen);
-
+                
                 // Update aria-hidden and tabindex for links based on menu state
                 links.forEach((link) => {
                     if (isOpen) {
@@ -114,7 +114,7 @@
             function isMobileView() {
                 return window.matchMedia("(max-width: 768px)").matches;
             }
-
+            
             document.addEventListener("DOMContentLoaded", () => {
                 if (isMobileView()) {
                     const links = document.querySelectorAll("#nav-menu a");
@@ -137,7 +137,7 @@
             // mobile versions
             const menuIcon = document.querySelector(".menu-icon-container");
             const navContainer = document.querySelector(".nav-container");
-
+            
             menuIcon.addEventListener("click", () => {
                 menuIcon.classList.toggle('active');
                 navContainer.classList.toggle('active');
