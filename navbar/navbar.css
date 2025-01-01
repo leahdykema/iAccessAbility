@@ -61,7 +61,6 @@
 
     /* logo */
     .link-logo {
-        background: url(../img/logo-colored.svg);
         display: block;
         background-position: center;
         background-repeat: no-repeat;
@@ -95,14 +94,6 @@
         .nav-container nav {
             width: 100%;
             padding: 0 30px;
-            transition: 200ms;
-        }
-    }
-
-    @media (max-width: 1099px) {
-        .nav-container nav {
-            width: 100%;
-            padding: 0 160px;
             transition: 200ms;
         }
     }
@@ -307,7 +298,6 @@
 
     /* logo */
     .link-logo {
-        background: url(../img/logo-colored.svg);
         display: block;
         background-position: center;
         background-repeat: no-repeat;
@@ -345,14 +335,6 @@
         }
     }
 
-    @media (max-width: 1099px) {
-        .nav-container nav {
-            width: 100%;
-            padding: 0 160px;
-            transition: 200ms;
-        }
-    }
-
     @media (max-width: 768px) {
         .nav-container nav {
             width: 100%;
@@ -361,7 +343,6 @@
         }
 
         .nav-container .desktop-nav {
-            display: none;
             flex-direction: column;
             position: fixed;
             top: 0;
@@ -376,7 +357,6 @@
         }
 
         .nav-container.active .desktop-nav {
-            display: flex;
             height: 100vh;
         }
 
