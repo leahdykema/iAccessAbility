@@ -61,6 +61,7 @@
 
     /* logo */
     .link-logo {
+        background: url(../img/logo-colored.svg);
         display: block;
         background-position: center;
         background-repeat: no-repeat;
@@ -298,6 +299,7 @@
 
     /* logo */
     .link-logo {
+        background: url(../img/logo-colored.svg);
         display: block;
         background-position: center;
         background-repeat: no-repeat;
