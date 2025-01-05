@@ -43,15 +43,14 @@
         border-radius: 20px;
     }
     
-    img.desktop-dark {
+    img.desktop {
         width: 100%;
         height: auto;
+        filter: invert();
     }
     
     /* Hidden */
-    img.desktop-light,
-    img.mobile-dark,
-    img.mobile-light {
+    img.mobile {
         display: none;
     }
     
@@ -100,14 +99,15 @@
             width: 90%;
         }
         
-        img.mobile-dark {
+        img.mobile {
             display: block;
             width: 100%;
             height: auto;
+            filter: invert();
         }
         
         /* Hidden */
-        img.desktop-dark {
+        img.desktop {
             display: none;
         }
     }
@@ -156,15 +156,13 @@
         border-radius: 20px;
     }
     
-    img.desktop-light {
+    img.desktop {
         width: 100%;
         height: auto;
     }
     
     /* Hidden */
-    img.desktop-dark,
-    img.mobile-dark,
-    img.mobile-light {
+    img.mobile {
         display: none;
     }
     
@@ -213,14 +211,14 @@
             width: 90%;
         }
         
-        img.mobile-light {
+        img.mobile {
             display: block;
             width: 100%;
             height: auto;
         }
         
         /* Hidden */
-        img.desktop-light {
+        img.desktop {
             display: none;
         }
     }
