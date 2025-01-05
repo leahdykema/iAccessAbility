@@ -58,7 +58,7 @@
         color: #8bc3ff;
         transform: scale(1.4);
     }
-
+    
     /* logo */
     .link-logo {
         background: url(../img/logo-colored.svg);
@@ -68,28 +68,28 @@
         height: 44px;
         width: 40px;
     }
-
+    
     /* Desktop Nav Animation */
     .desktop-nav li {
         transition: all 900ms ease;
     }
-
+    
     .desktop-nav.hide li {
         opacity: 0;
         transform: scale(0.8);
         pointer-events: none;
     }
-
+    
     /* Overlay Animation */
     .overlay {
         transition: all 200ms ease;
     }
-
+    
     /* hidden items */
     .mobile-nav {
         display: none;
     }
-
+    
     /* media queries */
     @media (max-width: 1100px) {
         .nav-container nav {
@@ -98,7 +98,7 @@
             transition: 200ms;
         }
     }
-
+    
     @media (max-width: 768px) {
         .nav-container nav {
             width: 100%;
@@ -120,25 +120,25 @@
             z-index: -1;
             transition: all 600ms ease;
         }
-
+        
         .nav-container.active .desktop-nav {
             display: flex;
             height: 100vh;
         }
-
+        
         .nav-container .desktop-nav li {
             width: 100%;
             padding: 0 35px;
         }
-
+        
         .nav-container .desktop-nav li:first-child {
             margin-top: 115px;
         }
-
+        
         .nav-container .desktop-nav .link-logo {
             display: none;
         }
-
+        
         .nav-container .desktop-nav li a {
             padding: 16px 0;
             display: inline-block;
@@ -148,11 +148,11 @@
             transform: translateY(-80px);
             transition: all 900ms ease;
         }
-
+        
         .nav-container.active .desktop-nav li a {
             transform: translateY(0);
         }
-
+        
         /* mobile nav */
         nav .mobile-nav {
             display: flex;
@@ -160,7 +160,7 @@
             justify-content: space-between;
             list-style: none;
         }
-
+        
         nav .menu-icon-container {
             width: 100%;
         }
@@ -210,7 +210,7 @@
             transition-delay: 0ms, 140ms;
             transition-duration: 200ms;
         }
-
+        
         nav .desktop-nav li a:hover,
         nav .desktop-nav li a:focus {
             display: inline-block;
@@ -218,16 +218,16 @@
             color: #8bc3ff;
         }
         
-        .link-logo-mobile {
+        .link-logo {
             height: 44px;
             width: 40px;
             transition: all 200ms;
         }
-
-        .link-logo-mobile:hover {
+        
+        .link-logo:hover {
             transform: scale(1.5);
         }
-
+        
         nav .desktop-nav.move-down li:first-child {
             margin-top: 150px;
         }
@@ -236,7 +236,7 @@
             opacity: 0;
             pointer-events: none;
         }
-
+        
         /* Nav Animation */
         .nav-container nav {
             transition: all 200ms ease;
@@ -251,7 +251,7 @@
         font-weight: 300;
         overflow-y: scroll;
     }
-
+    
     /* nav container */
     .nav-container {
         background: #eee;
@@ -263,14 +263,14 @@
         top: 0;
         right: 0;
     }
-
+    
     .nav-container nav {
         width: 800px;
         margin: 0 auto;
         padding: 0 8px;
         height: 100%;
     }
-
+    
     a {
         cursor: default;
     }
@@ -283,20 +283,20 @@
         height: 100%;
         list-style: none;
     }
-
+    
     nav .desktop-nav li a {
         color: #000;
         text-decoration: none;
         font-size: 16px;
         transition: all 400ms ease;
     }
-
+    
     nav .desktop-nav li a:hover,
     nav .desktop-nav li a:focus {
         color: #0063cc;
         transform: scale(1.4);
     }
-
+    
     /* logo */
     .link-logo {
         background: url(../img/logo-colored.svg);
@@ -306,28 +306,28 @@
         height: 44px;
         width: 40px;
     }
-
+    
     /* Desktop Nav Animation */
     .desktop-nav li {
         transition: all 900ms ease;
     }
-
+    
     .desktop-nav.hide li {
         opacity: 0;
         transform: scale(0.8);
         pointer-events: none;
     }
-
+    
     /* Overlay Animation */
     .overlay {
         transition: all 200ms ease;
     }
-
+    
     /* hidden items */
     .mobile-nav {
         display: none;
     }
-
+    
     /* media queries */
     @media (max-width: 1100px) {
         .nav-container nav {
@@ -336,14 +336,14 @@
             transition: 200ms;
         }
     }
-
+    
     @media (max-width: 768px) {
         .nav-container nav {
             width: 100%;
             padding: 0 30px;
             transition: 200ms;
         }
-
+        
         .nav-container .desktop-nav {
             flex-direction: column;
             position: fixed;
@@ -357,24 +357,24 @@
             z-index: -1;
             transition: all 800ms ease;
         }
-
+        
         .nav-container.active .desktop-nav {
             height: 100vh;
         }
-
+        
         .nav-container .desktop-nav li {
             width: 100%;
             padding: 0 35px;
         }
-
+        
         .nav-container .desktop-nav li:first-child {
             margin-top: 115px;
         }
-
+        
         .nav-container .desktop-nav .link-logo {
             display: none;
         }
-
+        
         .nav-container .desktop-nav li a {
             padding: 16px 0;
             display: inline-block;
@@ -384,11 +384,11 @@
             transform: translateY(-80px);
             transition: all 900ms ease;
         }
-
+        
         .nav-container.active .desktop-nav li a {
             transform: translateY(0);
         }
-
+        
         /* mobile nav */
         nav .mobile-nav {
             display: flex;
@@ -396,7 +396,7 @@
             justify-content: space-between;
             list-style: none;
         }
-
+        
         nav .menu-icon-container {
             width: 100%;
         }
@@ -411,7 +411,7 @@
             cursor: default;
             position: relative;
         }
-
+        
         nav .menu-icon .line-1,
         nav .menu-icon .line-2 {
             position: absolute;
@@ -422,15 +422,15 @@
             transition-delay: 0ms, 140ms;
             transition-duration: 200ms;
         }
-
+        
         nav .menu-icon .line-1 {
             top: 18px;
         }
-
+        
         nav .menu-icon .line-2 {
             top: 26px;
         }
-
+        
         nav .menu-icon-container.active .menu-icon .line-1 {
             top: 22px;
             transform: rotateZ(45deg);
@@ -438,7 +438,7 @@
             transition-delay: 0ms, 140ms;
             transition-duration: 200ms;
         }
-
+        
         nav .menu-icon-container.active .menu-icon .line-2 {
             top: 22px;
             transform: rotateZ(-45deg);
@@ -446,33 +446,33 @@
             transition-delay: 0ms, 140ms;
             transition-duration: 200ms;
         }
-
+        
         nav .desktop-nav li a:hover,
         nav .desktop-nav li a:focus {
             display: inline-block;
             transform: color 0.1s ease;
             color: #0063cc;
         }
-
+        
         .link-logo {
             height: 44px;
             width: 40px;
             transition: all 200ms;
         }
-
+        
         .link-logo:hover {
             transform: scale(1.5);
         }
-
+        
         nav .desktop-nav.move-down li:first-child {
             margin-top: 150px;
         }
-
+        
         nav .desktop-nav.move-down li {
             opacity: 0;
             pointer-events: none;
         }
-
+        
         /* Nav Animation */
         .nav-container nav {
             transition: all 200ms ease;
