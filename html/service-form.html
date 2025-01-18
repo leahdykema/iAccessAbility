@@ -104,7 +104,7 @@
     					link.setAttribute("tabindex", "-1");
     		    		}
     			});
-    	    }
+    	    	}
 	    
 	    	function isMobileView() {
 			    return window.matchMedia("(max-width: 768px)").matches;
@@ -139,15 +139,33 @@
 	    	});
 
             
-            // Get references to the checkbox and submit button
-            const checkbox = document.getElementById('agreement');
-            const submitButton = document.getElementById('btn');
-            
-            // Add an event listener to the checkbox
-            checkbox.addEventListener('change', function () {
-                // Enable or disable the submit button based on checkbox state
-                submitButton.disabled = !checkbox.checked;
-            });
+           	 // Get references to the checkbox and submit button
+            	const checkbox = document.getElementById('agreement');
+            	const submitButton = document.getElementById('btn');
+	            	// Add an event listener to the checkbox
+	            	checkbox.addEventListener('change', function () {
+	                // Enable or disable the submit button based on checkbox state
+	                submitButton.disabled = !checkbox.checked;
+            	});
         </script>
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbxXSJDlJSDJwRC_Chk8lD4twhzeKzyommhMcH3ICSbKhUg31awIBSnilSj9su0viVA5/exec'
+		const form = document.querSelector('#form')
+
+		form.addEventListener('submit', e => {
+			submitButton.disabled = true
+			e.preventDefault()
+			let requestBody = new FormData(form)
+			fetch(scriptURL, { method: 'POST', body: requestBody})
+			.then(response => {
+				alert('Success!', response)
+				submitButton.disabled = false
+			})
+			.catch(error => {
+				alert('Error!', error.message)
+				submitButton.disabled = false
+			})
+		})
+	</script>
     </body>
 </html>
