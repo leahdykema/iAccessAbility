@@ -49,39 +49,39 @@
             <!-- Action needed for working -->
             <div class="form">
                 <form method="POST" action="https://script.google.com/macros/s/AKfycbxXSJDlJSDJwRC_Chk8lD4twhzeKzyommhMcH3ICSbKhUg31awIBSnilSj9su0viVA5/exec">
+                    <input type="hidden" name="Date" id="current-date">
                     <label>First Name&#58;</label>
-                    <input type="text" name="First Name" size="15" maxlength="15" placeholder="John">
+                    <input type="text" name="First Name" required size="15" maxlength="15" placeholder="John">
                     <br>
                     <label>Last Name&#58;</label>
-                    <input type="text" name="Last Name" size="15" maxlength="15" placeholder="Appleseed">
+                    <input type="text" name="Last Name" required size="15" maxlength="15" placeholder="Appleseed">
                     <br>
                     <label>Phone&#58;</label>
-                    <input type="tel" name="Phone Number" size="15" placeholder="(515) 497-0292">
+                    <input type="tel" name="Phone Number" required size="15" placeholder="(515) 497-0292">
                     <br>
                     <label>Email&#58;</label>
-                    <input type="email" name="Email Address" size="22" placeholder="johnappleseed@example.com">
+                    <input type="email" name="Email Address" required size="22" placeholder="johnappleseed@example.com">
                     <br>
                     <label>Service Request&#58;</label>
                     <select name="Service" required length="2">
                         <option selected disabled>Select a Service</option>
                         <option value="Tech Support">Tech Support</option>
                         <option value="Personalized Consulting">Buying Consulting</option>
-                        <option value="One-on-One Training">One&#45;on&#45;One Training</option>
+                        <option value="One-on-One Training">One-on-One Training</option>
                     </select>
                     <br>
                     <div class="agree-section">
                         <label for="agreement" style="word-wrap: normal">
-                            <input type="checkbox" id="agreement" name="payment-acceptance" value="agree" required>
-                            I aggree to using Venmo or PayPal to pay for my services with iAccessAbility
+                            <input type="checkbox" id="agreement" name="payment-acceptance" required>
+                            I agree to use Venmo or PayPal to pay for my services with iAccessAbility.
                         </label>
                     </div>
-                    <br>
                     <input type="submit" name="request" value="Request Service" class="submit" id="btn" disabled>
                 </form>
             </div>
         </div>
         <script>
-    		function toggleNav() {
+            function toggleNav() {
     			const navContainer = document.querySelector(".nav-container");
     			const navMenu = document.querySelector("#nav-menu");
     			const toggleButton = document.querySelector(".menu-icon");
@@ -104,8 +104,8 @@
     					link.setAttribute("tabindex", "-1");
     		    		}
     			});
-    	    	}
-	    
+            }
+            
 	    	function isMobileView() {
 			    return window.matchMedia("(max-width: 768px)").matches;
 	    	}
@@ -137,40 +137,64 @@
 			    menuIcon.classList.toggle('active');
 			    navContainer.classList.toggle('active');
 	    	});
-
             
-           	 // Get references to the checkbox and submit button
-            	const checkbox = document.getElementById('agreement');
-            	const submitButton = document.getElementById('btn');
-	            	// Add an event listener to the checkbox
-	            	checkbox.addEventListener('change', function () {
-	                // Enable or disable the submit button based on checkbox state
-	                submitButton.disabled = !checkbox.checked;
-            	});
+            // Get references to the checkbox and submit button
+            const checkbox = document.getElementById('agreement');
+            const submitButton = document.getElementById('btn');
+                // Add an event listener to the checkbox
+                checkbox.addEventListener('change', function () {
+                // Enable or disable the submit button based on checkbox state
+                submitButton.disabled = !checkbox.checked;
+            });
         </script>
-	<script>
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbxXSJDlJSDJwRC_Chk8lD4twhzeKzyommhMcH3ICSbKhUg31awIBSnilSj9su0viVA5/exec';
-		const form = document.querySelector('form'); 
-		const submitButton = document.getElementById('btn');
-		
-		form.addEventListener('submit', e => {
-		    submitButton.disabled = true; 
-		    e.preventDefault();
-		
-		    let requestBody = new FormData(form);
-		    
-		    fetch(scriptURL, { method: 'POST', body: requestBody })
-		        .then(response => response.json())
-		        .then(data => {
-		            alert('Success! Your request has been submitted.');
-		            submitButton.disabled = false;
-		            form.reset(); // Clears the form after successful submission
-		        })
-		        .catch(error => {
-		            alert('Error! Please try again.');
-		            submitButton.disabled = false;
-		        });
-		});
-	</script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const dateField = document.getElementById("current-date");
+                const today = new Date().toISOString().split("T")[0]; // Gets YYYY-MM-DD
+                dateField.value = today;
+            });
+            
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxXSJDlJSDJwRC_Chk8lD4twhzeKzyommhMcH3ICSbKhUg31awIBSnilSj9su0viVA5/exec';
+            const form = document.querySelector('form');
+            const submitButton = document.getElementById('btn');
+            const messageContainer = document.createElement('div'); // Message container
+            messageContainer.id = "form-message";
+            form.appendChild(messageContainer); // Add it below the form
+            form.addEventListener('submit', e => {
+                e.preventDefault(); // Prevent default form submission behavior
+                submitButton.disabled = true; // Disable button to prevent multiple submissions
+                let requestBody = new FormData(form);
+                fetch(scriptURL, { method: 'POST', body: requestBody })
+                .then(response => response.json()) // Ensure response is treated as JSON
+                .then(data => {
+                    if (data.status === "success") {
+                        messageContainer.innerHTML = `
+                            <p style="color: green; font-weight: bold;">✅ Success! Your request has been submitted.</p>
+                            <button id="return-home" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;">Return Home</button>
+                        `;
+                        form.reset(); // Clears form after submission
+
+                        // Add event listener to Return Home button
+                        document.getElementById('return-home').addEventListener('click', () => {
+                            window.location.href = "index.html"; // Change this to your home page URL
+                        });
+                    } else {
+                        messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">❌ Error! Something went wrong.</p>`;
+                    }
+                })
+                .catch(error => {
+                    messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">❌ Error! Please try again.</p>`;
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                });
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                const dateField = document.getElementById("current-date");
+                const today = new Date().toISOString().split("T")[0]; // Gets YYYY-MM-DD
+                dateField.value = today;
+                console.log("Date field set to:", dateField.value); // Check if it's setting correctly
+            });
+        </script>
     </body>
 </html>
