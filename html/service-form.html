@@ -15,7 +15,6 @@
             <nav>
                 <!-- mobile nav -->
                 <ul class="mobile-nav">
-                    <!-- Menu icon -->
                     <li>
                         <div class="menu-icon-container">
                             <button class="menu-icon">
@@ -24,29 +23,22 @@
                             </button>
                         </div>
                     </li>
-                    <!-- logo -->
                     <li>
                         <a href="../index.html" class="link-logo"><img src="../img/logo-colored.svg" class="link-logo" alt="I access ability"></a>
                     </li>
                 </ul>
                 <!-- desktop nav -->
                 <ul class="desktop-nav">
-                    <!-- logo -->
                     <li><a href="../index.html" class="link-logo"><img src="../img/logo-colored.svg" class="link-logo" alt="I access ability"></a></li>
-                    <!-- Support -->
                     <li><a href="support.html">Support</a></li>
-                    <!-- Connect -->
                     <li><a href="connect.html">Connect</a></li>
-                    <!-- About -->
                     <li><a href="about.html">About</a></li>
-                    <!-- Resources -->
                 </ul>
             </nav>
         </div>
         <!-- Services Form -->
         <div class="site">
             <h2>Request Services</h2>
-            <!-- Action needed for working -->
             <div class="form">
                 <form method="POST" action="https://script.google.com/macros/s/AKfycbxXSJDlJSDJwRC_Chk8lD4twhzeKzyommhMcH3ICSbKhUg31awIBSnilSj9su0viVA5/exec">
                     <input type="hidden" name="Date" id="current-date">
@@ -57,13 +49,13 @@
                     <input type="text" name="Last Name" required size="15" maxlength="15" placeholder="Appleseed">
                     <br>
                     <label>Phone&#58;</label>
-                    <input type="tel" name="Phone Number" required size="15" placeholder="(515) 497-0292">
+                    <input type="tel" name="Phone Number" required size="15" placeholder="(555) 555-5555">
                     <br>
                     <label>Email&#58;</label>
                     <input type="email" name="Email Address" required size="22" placeholder="johnappleseed@example.com">
                     <br>
                     <label>Service Request&#58;</label>
-                    <select name="Service" required length="2">
+                    <select name="Service" required>
                         <option selected disabled>Select a Service</option>
                         <option value="Tech Support">Tech Support</option>
                         <option value="Personalized Consulting">Buying Consulting</option>
@@ -71,129 +63,77 @@
                     </select>
                     <br>
                     <div class="agree-section">
-                        <label for="agreement" style="word-wrap: normal">
+                        <label for="agreement">
                             <input type="checkbox" id="agreement" name="payment-acceptance" required>
                             I agree to use Venmo or PayPal to pay for my services with iAccessAbility.
                         </label>
                     </div>
+                    <br>
                     <input type="submit" name="request" value="Request Service" class="submit" id="btn" disabled>
                 </form>
+                <div id="form-message"></div>
             </div>
         </div>
         <script>
             function toggleNav() {
-    			const navContainer = document.querySelector(".nav-container");
-    			const navMenu = document.querySelector("#nav-menu");
-    			const toggleButton = document.querySelector(".menu-icon");
-    			const links = document.querySelectorAll("#nav-menu a");
-    
-    			// Toggle the 'active' class on navContainer and navMenu
-    			const isOpen = navContainer.classList.toggle("active");
-    			navMenu.classList.toggle("active", isOpen);
-    
-    			// Update aria-expanded attribute for the button
-    			toggleButton.setAttribute("aria-expanded", isOpen);
-    
-    			// Update aria-hidden and tabindex for links based on menu state
-    			links.forEach((link) => {
-    		    		if (isOpen) {
-    					link.setAttribute("aria-hidden", "false");
-    					link.setAttribute("tabindex", "0");
-    		    		} else {
-    					link.setAttribute("aria-hidden", "true");
-    					link.setAttribute("tabindex", "-1");
-    		    		}
-    			});
-            }
-            
-	    	function isMobileView() {
-			    return window.matchMedia("(max-width: 768px)").matches;
-	    	}
-
-	    	document.addEventListener("DOMContentLoaded", () => {
-        			if (isMobileView()) {
-        			    const links = document.querySelectorAll("#nav-menu a");
-        			    links.forEach((link) => {
-        				link.setAttribute("aria-hidden", "true");
-        				link.setAttribute("tabindex", "-1");
-        			});
-    			}
-		    });
-	    
-	    	// Ensure links are hidden on page load in mobile view
-	    	document.addEventListener("DOMContentLoaded", () => {
-			const links = document.querySelectorAll("#nav-menu a");
-			links.forEach((link) => {
-		    		link.setAttribute("aria-hidden", "true");
-		    		link.setAttribute("tabindex", "-1");
-			    });
-	    	});
-	    
-	    	// mobile versions
-	    	const menuIcon = document.querySelector(".menu-icon-container");
-	    	const navContainer = document.querySelector(".nav-container");
-
-	    	menuIcon.addEventListener("click", () => {
-			    menuIcon.classList.toggle('active');
-			    navContainer.classList.toggle('active');
-	    	});
-            
-            // Get references to the checkbox and submit button
-            const checkbox = document.getElementById('agreement');
-            const submitButton = document.getElementById('btn');
-                // Add an event listener to the checkbox
-                checkbox.addEventListener('change', function () {
-                // Enable or disable the submit button based on checkbox state
-                submitButton.disabled = !checkbox.checked;
-            });
-        </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const dateField = document.getElementById("current-date");
-                const today = new Date().toISOString().split("T")[0]; // Gets YYYY-MM-DD
-                dateField.value = today;
-            });
-            
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxXSJDlJSDJwRC_Chk8lD4twhzeKzyommhMcH3ICSbKhUg31awIBSnilSj9su0viVA5/exec';
-            const form = document.querySelector('form');
-            const submitButton = document.getElementById('btn');
-            const messageContainer = document.createElement('div'); // Message container
-            messageContainer.id = "form-message";
-            form.appendChild(messageContainer); // Add it below the form
-            form.addEventListener('submit', e => {
-                e.preventDefault(); // Prevent default form submission behavior
-                submitButton.disabled = true; // Disable button to prevent multiple submissions
-                let requestBody = new FormData(form);
-                fetch(scriptURL, { method: 'POST', body: requestBody })
-                .then(response => response.json()) // Ensure response is treated as JSON
-                .then(data => {
-                    if (data.status === "success") {
-                        messageContainer.innerHTML = `
-                            <p style="color: green; font-weight: bold;">✅ Success! Your request has been submitted.</p>
-                            <button id="return-home" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;">Return Home</button>
-                        `;
-                        form.reset(); // Clears form after submission
-
-                        // Add event listener to Return Home button
-                        document.getElementById('return-home').addEventListener('click', () => {
-                            window.location.href = "index.html"; // Change this to your home page URL
-                        });
-                    } else {
-                        messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">❌ Error! Something went wrong.</p>`;
-                    }
-                })
-                .catch(error => {
-                    messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">❌ Error! Please try again.</p>`;
-                })
-                .finally(() => {
-                    submitButton.disabled = false;
+                const navContainer = document.querySelector(".nav-container");
+                const navMenu = document.querySelector("#nav-menu");
+                const toggleButton = document.querySelector(".menu-icon");
+                const links = document.querySelectorAll("#nav-menu a");
+                const isOpen = navContainer.classList.toggle("active");
+                navMenu.classList.toggle("active", isOpen);
+                toggleButton.setAttribute("aria-expanded", isOpen);
+                links.forEach((link) => {
+                    link.setAttribute("aria-hidden", isOpen ? "false" : "true");
+                    link.setAttribute("tabindex", isOpen ? "0" : "-1");
                 });
-            });
-            document.addEventListener("DOMContentLoaded", function () {
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                const links = document.querySelectorAll("#nav-menu a");
+                links.forEach((link) => {
+                    link.setAttribute("aria-hidden", "true");
+                    link.setAttribute("tabindex", "-1");
+                });
+                const menuIcon = document.querySelector(".menu-icon-container");
+                const navContainer = document.querySelector(".nav-container");
+                menuIcon.addEventListener("click", () => {
+                    menuIcon.classList.toggle('active');
+                    navContainer.classList.toggle('active');
+                });
+                // Form functionality
+                const checkbox = document.getElementById('agreement');
+                const submitButton = document.getElementById('btn');
                 const dateField = document.getElementById("current-date");
-                const today = new Date().toISOString().split("T")[0]; // Gets YYYY-MM-DD
-                dateField.value = today;
-                console.log("Date field set to:", dateField.value); // Check if it's setting correctly
+                const form = document.querySelector('form');
+                const messageContainer = document.getElementById("form-message");
+                checkbox.addEventListener('change', () => {
+                    submitButton.disabled = !checkbox.checked;
+                });
+                dateField.value = new Date().toISOString().split("T")[0];
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    submitButton.disabled = true;
+                    let requestBody = new FormData(form);
+                    fetch(form.action, { method: 'POST', body: requestBody })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Server response:", data); // Debugging line
+                        if (data.status === "success") {
+                            messageContainer.innerHTML = `
+                                <p style="color: green; font-weight: bold;">Success! Your request has been submitted.</p>`;
+                            form.reset();
+                        } else {
+                            messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">Error! Something went wrong, please try again.</p>`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Fetch error:", error);
+                        messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">Error! Something went wrong, please try again.</p>`;
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                    });
+                });
             });
         </script>
     </body>
