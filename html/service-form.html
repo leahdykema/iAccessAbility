@@ -118,7 +118,7 @@
                     .then(response => response.json())
                     .then(data => {
                         console.log("Server response:", data); // Debugging line
-                        if (data.status === "success") {
+                        if (data.result === "success") {
                             messageContainer.innerHTML = `
                                 <p style="color: green; font-weight: bold;">Success! Your request has been submitted.</p>`;
                             form.reset();
