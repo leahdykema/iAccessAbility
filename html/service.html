@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
-     <head>
+    <head>
         <meta charset="UTF-8">
         <meta name="author" content="Leah Dykema">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="../img/logo.svg">
-        <title>Services - iAccessAbility</title>
-        <link rel="stylesheet" href="../stylesheets/service.css">
+        <title>Support - iAccessAbility</title>
+        <link rel="stylesheet" href="../stylesheets/support.css">
         <link rel="stylesheet" href="../navbar/navbar.css">
     </head>
     <body>
@@ -43,98 +43,16 @@
                 </ul>
             </nav>
         </div>
-        <!-- Store page -->
-        <div class="site">
-            <h1>Support &amp; Consulting Services</h1>
-            <!-- Support Services -->
-            <div class="support-options">
-                <!-- Tech Support -->
-                <section>
-                    <h2>Tech Support</h2>
-                    <p>Facing technical issues can be frustrating, but you don’t have to handle them alone. I provide comprehensive tech support and problem-solving services to help you resolve issues quickly and efficiently. Whether it’s troubleshooting software, configuring settings, or addressing accessibility concerns, I offer personalized assistance tailored to your specific challenges. With a strong foundation in IT support and accessibility solutions, I am always expanding my knowledge to stay current with the latest technologies and provide you with the most effective solutions. My goal is to get your devices up and working smoothly again.</p>
-                    <p>My tech support services are available via phone, text, or email. I recommend using text through your phone number, WhatsApp, or Instagram for faster communication, or email for more detailed inquiries.</p>
-                    <p><a class="links" href="service-form.html">Book an Appointment &gt;</a></p>
-                </section>
-                <!-- Buying Consulting -->
-                <section>
-                    <h2>Buying Consulting</h2>
-                    <p>Whether you’re an artist, author, gamer, student, or simply seeking a reliable device, I offer personalized buying recommendations tailored to your specific needs and budget. The latest or most expensive option isn’t always the right choice for everyone, and that’s perfectly fine. Different devices are designed with different users in mind, and I’m here to help you identify the best fit for your unique requirements.</p>
-                    <p>My consulting services are available via phone, text, or email. I recommend starting with an initial phone call, after which I will provide a detailed follow-up email that includes personalized product recommendations and links to the best places to purchase them.</p>
-                    <p><a class="links" href="service-form.html">Book an Appointment &gt;</a></p>
-                </section>
-                <!-- One-on-One Training -->
-                <section>
-                    <h2>One-on-One Training</h2>
-                    <p>Whether you’re new to technology or looking to enhance your skills, my one-on-one training sessions are designed to provide personalized guidance at your own pace. From mastering device basics to exploring advanced features, I tailor each session to your specific needs and goals. With a focus on accessibility and ease of use, I help you build the confidence and knowledge to get the most out of your devices. As I continuously expand my expertise in the latest tech, you’ll benefit from up-to-date training that empowers you to navigate your technology with ease.</p>
-                    <p>My one-on-one training sessions can be conducted in-person,&#42; via Zoom or FaceTime, or through text via your phone number or WhatsApp. If in-person training isn’t an option, I recommend using FaceTime for a more interactive experience since texting is not the preferred method of communication for training purposes.</p>
-                    <p class="notations">&#42;In-person training sessions are available exclusively in Pella, IA, due to transportation limitations.</p>
-                    <p><a class="links" href="service-form.html">Book an Appointment &gt;</a></p>
-                </section>
-            </div>
-            <!-- Disclaimer/Reference/detail Section -->
-            <div class="disclaimer-section">
-                <p class="info">Last updated: December 17, 2024</p>
-				<p class="info"><a class="links" href="sms:+15154970292">&#43;1 &#40;515&#41; 497&#45;0292</a></p>
-                <p class="info"><a class="links" href="mailto:iAccessAbility@gmail.com">iAccessAbillity&#64;gmail.com</a></p>
-            </div>
+        <!-- Support page -->
+        <div>
+            <h1>Support</h1>
+            <p>Whether you&#39;re looking for personalized assistance with technology or need guidance on making the most of your devices, you&#39;ve come to the right place. As a student specializing in providing personal consultanting in accessibility for Apple products, I am here to help you navigate challenges, find and provide personal buying suggestions, answer questions, and ensure your tech works best for you and your needs. Let&#39;s connect and find the right solutions for you!</p>
+            <a class="support-links" href="support-articles.html">Support Articles</a>
+            <br>
+            <a class="support-links" href="https://discussions.apple.com/welcome">Apple Support Community</a>
+            <br>
+            <a class="support-links" href="service.html">iAccessAbility Services</a>
         </div>
-        <script>
-		function toggleNav() {
-			const navContainer = document.querySelector(".nav-container");
-			const navMenu = document.querySelector("#nav-menu");
-			const toggleButton = document.querySelector(".menu-icon");
-			const links = document.querySelectorAll("#nav-menu a");
-
-			// Toggle the 'active' class on navContainer and navMenu
-			const isOpen = navContainer.classList.toggle("active");
-			navMenu.classList.toggle("active", isOpen);
-
-			// Update aria-expanded attribute for the button
-			toggleButton.setAttribute("aria-expanded", isOpen);
-
-			// Update aria-hidden and tabindex for links based on menu state
-			links.forEach((link) => {
-		    		if (isOpen) {
-					link.setAttribute("aria-hidden", "false");
-					link.setAttribute("tabindex", "0");
-		    		} else {
-					link.setAttribute("aria-hidden", "true");
-					link.setAttribute("tabindex", "-1");
-		    		}
-			});
-	    	}
-	    
-	    	function isMobileView() {
-			return window.matchMedia("(max-width: 768px)").matches;
-	    	}
-
-	    	document.addEventListener("DOMContentLoaded", () => {
-			if (isMobileView()) {
-			    	const links = document.querySelectorAll("#nav-menu a");
-			    	links.forEach((link) => {
-					link.setAttribute("aria-hidden", "true");
-					link.setAttribute("tabindex", "-1");
-			    	});
-			}
-		});
-	    
-	    	// Ensure links are hidden on page load in mobile view
-	    	document.addEventListener("DOMContentLoaded", () => {
-			const links = document.querySelectorAll("#nav-menu a");
-			links.forEach((link) => {
-		    		link.setAttribute("aria-hidden", "true");
-		    		link.setAttribute("tabindex", "-1");
-			});
-	    	});
-	    
-	    	// mobile versions
-	    	const menuIcon = document.querySelector(".menu-icon-container");
-	    	const navContainer = document.querySelector(".nav-container");
-
-	    	menuIcon.addEventListener("click", () => {
-			menuIcon.classList.toggle('active');
-			navContainer.classList.toggle('active');
-	    	});
-        </script>
+        <script src="../navbar/navbar.js"></script>
     </body>
 </html>
