@@ -102,7 +102,7 @@
                 });
                 // Form functionality
                 const checkbox = document.getElementById('agreement');
-                const submitButton = document.getElementById('btn');
+                const submitButton = document.querySelector('input[name="request"]');
                 const dateField = document.getElementById("current-date");
                 const form = document.querySelector('form');
                 const messageContainer = document.getElementById("form-message");
@@ -121,7 +121,9 @@
                         if (data.result === "success") {
                             messageContainer.innerHTML = `
                                 <p style="color: green; font-weight: bold;">Success! Your request has been submitted.</p>`;
-                            form.reset();
+                            form.reset(); // Resest's form
+                            checkbox.checked = false; // Unchecks agreement
+                            submitButton.disabled = true; // Re-disable button after reset
                         } else {
                             messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">Error! Something went wrong, please try again.</p>`;
                         }
