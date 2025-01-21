@@ -63,7 +63,7 @@
                     </select>
                     <br>
                     <label>Communication Preference&#58;</label>
-                    <select name="Communication Preference" required>
+                    <select name="Communication" required>
                         <option selected disabled>Select</option>
                         <option value="SMS">Direct Text</option>
                         <option value="call">Phone Call</option>
@@ -131,7 +131,7 @@
                         console.log("Server response:", data); // Debugging line
                         if (data.result === "success") {
                             messageContainer.innerHTML = `
-                                <p style="color: green; font-weight: bold;">Success! Your request has been submitted.</p>`;
+                                <p style="color: green; font-weight: bold;">Success! Your request has been submitted and a comfirmation email sent to your email.</p>`;
                             form.reset(); // Resest's form
                             checkbox.checked = false; // Unchecks agreement
                             submitButton.disabled = true; // Re-disable button after reset
