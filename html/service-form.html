@@ -12,12 +12,12 @@
     <body>
         <!-- Menu Nav Bar -->
         <div data-role="header" data-position="fixed" class="nav-container">
-            <nav>
+            <nav id="nav-menu">
                 <!-- mobile nav -->
                 <ul class="mobile-nav">
                     <li>
                         <div class="menu-icon-container">
-                            <button class="menu-icon">
+                            <button class="menu-icon" aria-label="Toggle navigation" aria-expand="false" onclick="toggleNav()">
                                 <span onclick="toggleNav()" class="line-1"></span>
                                 <span onclick="toggleNav()" class="line-2"></span>
                             </button>
