@@ -13,20 +13,6 @@
         <!-- Menu Nav Bar -->
         <div data-role="header" data-position="fixed" class="nav-container">
             <nav id="nav-menu">
-                <!-- mobile nav -->
-                <ul class="mobile-nav">
-                    <li>
-                        <div class="menu-icon-container">
-                            <button class="menu-icon" aria-label="Toggle navigation" aria-expand="false" onclick="toggleNav()">
-                                <span onclick="toggleNav()" class="line-1"></span>
-                                <span onclick="toggleNav()" class="line-2"></span>
-                            </button>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="../index.html" class="link-logo"><img src="../img/logo-colored.svg" class="link-logo" alt="I access ability"></a>
-                    </li>
-                </ul>
                 <!-- desktop nav -->
                 <ul class="desktop-nav">
                     <li><a href="../index.html" class="link-logo"><img src="../img/logo-colored.svg" class="link-logo" alt="I access ability"></a></li>
@@ -86,31 +72,7 @@
             </div>
         </div>
         <script>
-            function toggleNav() {
-                const navContainer = document.querySelector(".nav-container");
-                const navMenu = document.querySelector("#nav-menu");
-                const toggleButton = document.querySelector(".menu-icon");
-                const links = document.querySelectorAll("#nav-menu a");
-                const isOpen = navContainer.classList.toggle("active");
-                navMenu.classList.toggle("active", isOpen);
-                toggleButton.setAttribute("aria-expanded", isOpen);
-                links.forEach((link) => {
-                    link.setAttribute("aria-hidden", isOpen ? "false" : "true");
-                    link.setAttribute("tabindex", isOpen ? "0" : "-1");
-                });
-            }
             document.addEventListener("DOMContentLoaded", () => {
-                const links = document.querySelectorAll("#nav-menu a");
-                links.forEach((link) => {
-                    link.setAttribute("aria-hidden", "true");
-                    link.setAttribute("tabindex", "-1");
-                });
-                const menuIcon = document.querySelector(".menu-icon-container");
-                const navContainer = document.querySelector(".nav-container");
-                menuIcon.addEventListener("click", () => {
-                    menuIcon.classList.toggle('active');
-                    navContainer.classList.toggle('active');
-                });
                 // Form functionality
                 const checkbox = document.getElementById('agreement');
                 const submitButton = document.querySelector('input[name="request"]');
