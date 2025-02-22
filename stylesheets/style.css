@@ -127,3 +127,59 @@
         }
     }
 }
+
+/* High Contrast Settings */
+@media (prefers-contrast: more) {
+    * {
+        color: #000;
+        font-weight: 600;
+    }
+    
+    b {
+        font-weight: 600;
+    }
+    
+    a {
+        color: #0000ff !important;
+        text-decoration: underline;
+        border-bottom: 1px solid currentColor;
+    }
+    
+    section {
+        border: solid;
+    }
+    
+    @media (hover: hover) {
+        div.card:hover,
+        div.card:focus,
+        div.card:active {
+            transform: scale(1.1);
+        }
+        
+        a:hover,
+        a:focus,
+        a:active {
+            color: #0063cc !important;
+        }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        * {
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        a {
+            color: #8bc3ff !important;
+        }
+        
+        @media (hover: hover) {
+            
+            a:hover,
+            a:focus,
+            a:active {
+                color: #0063cc !important;
+            }
+        }
+    }
+}
