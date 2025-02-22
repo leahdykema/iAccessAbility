@@ -331,3 +331,28 @@ a:focus {
         }
     }
 }
+
+/* High Contrasts */
+@media (prefers-contrast: more) {
+    * {
+        font-weight: bold;
+        color: #000;
+    }
+    
+    a {
+        color: #0000ff;
+        text-decoration: underline;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        * {
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        a {
+            color: #8bc3ff;
+            text-decoration: underline;
+        }
+    }
+}
