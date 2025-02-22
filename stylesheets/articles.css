@@ -879,3 +879,49 @@
         }
     }
 }
+
+/* High Contrast */
+@media (prefers-contrast: more) {
+    * {
+        font-weight: bold;
+        color: #000 !important;
+    }
+    
+    a {
+        color: #0000ff !important;
+        text-decoration: underline;
+    }
+    
+    div.disclaimer-section {
+            border: solid;
+        }
+    
+    @media (hover: hover) {
+        a:hover,
+        a:focus {
+            color: #0063cc !important;
+        }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        * {
+            color: #fff !important;
+        }
+        
+        a {
+            color: #8bc3ff !important;
+            text-decoration: underline;
+        }
+        
+        div.disclaimer-section {
+            border: solid;
+        }
+        
+        @media (hover: hover) {
+            a:hover,
+            a:focus {
+                color: #0063cc !important;
+            }
+        }
+    }
+}
