@@ -42,7 +42,7 @@
 
     section {
         margin: 40px auto;
-        width: 70%;
+        width: 100%;
         padding: 20px;
         background-color: #222;
         border-radius: 20px;
@@ -182,7 +182,7 @@
 
     div.disclaimer-section {
         margin: 20px auto;
-        width: 70%;
+        width: 100%;
         padding: 20px;
         background-color: #eee;
         border-radius: 20px;
