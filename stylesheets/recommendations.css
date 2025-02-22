@@ -237,7 +237,7 @@
     a {
         color: #0000ff !important;
         text-decoration: underline;
-        border-bottom: 2px solid currentColor; /* Make links more visible */
+        border-bottom: 1px solid currentColor; /* Make links more visible */
     }
     
     div.title,
