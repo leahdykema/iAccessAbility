@@ -365,3 +365,20 @@
         }
     }
 }
+
+/* High Contrast */
+@media (prefers-contrast: more) {
+    h1,
+    p,
+    a.support-links {
+        background-color: #fff;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        h1,
+        p,
+        a.support-links {
+            background-color: #000;
+        }
+    }
+}
