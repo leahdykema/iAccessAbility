@@ -172,3 +172,48 @@
         }
     }
 }
+
+/* High Contrast */
+@media (prefers-contrast: more) {
+    * {
+        font-weight: bold;
+    }
+    
+    .nav-container {
+        background-color: #fff;
+        border: solid;
+    }
+    
+    nav .desktop-nav li a {
+        color: #0000ff;
+        text-decoration: underline;
+    }
+    
+    a.link-logo,
+    img.link-logo {
+        text-decoration: none !important;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        .nav-container {
+            background-color: #000;
+            border: solid;
+        }
+        
+        nav .desktop-nav li a {
+            color: #8bc3ff;
+        }
+        
+        a.link-logo,
+        img.link-logo {
+            text-decoration: none !important;
+        }
+        
+        @media (hover: hover) {
+            a:hover,
+            a:focus {
+                color: #0063cc !important;
+            }
+        }
+    }
+}
