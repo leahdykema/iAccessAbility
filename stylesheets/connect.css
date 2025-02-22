@@ -327,3 +327,16 @@
         }
     }
 }
+
+/* High Contrast */
+@media (prefers-contrast: more) {
+    img.Icon {
+        background-color: #000;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        img.Icon {
+            background-color: #fff;
+        }
+    }
+}
