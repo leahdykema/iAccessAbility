@@ -1,0 +1,147 @@
+@import "fonts.css";
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        font-family: sans-serif;
+        font-weight: 300;
+        color: #fff;
+        overflow: scroll;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    h1, h3 {
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: center;
+    }
+    
+    a.button {
+        background-color: #0063cc;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin: auto;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #fff;
+        transition: 200ms;
+    }
+    
+    @media (hover: hover) {
+        a.button:hover,
+        a.button:focus {
+            scale: 1.2;
+            background-color: #0040cc;
+        }
+    }
+    
+    @media (max-width: 768px ) {
+        body {
+            margin: 60% auto;
+        }
+        
+        h1, h3 {
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center;
+        }
+        
+        a.button {
+            background-color: #0063cc;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 auto;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: 200ms;
+        }
+        
+        @media (hover: hover) {
+            a.button:hover,
+            a.button:focus {
+                scale: 1.2;
+                background-color: #0040cc;
+            }
+        }
+    }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #fff;
+        font-family: sans-serif;
+        font-weight: 300;
+        color: #000;
+        overflow: scroll;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    h1, h3 {
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: center;
+    }
+    
+    a.button {
+        background-color: #8bc3ff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin: auto;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #fff;
+        transition: 200ms;
+    }
+    
+    @media (hover: hover) {
+        a.button:hover,
+        a.button:focus {
+            scale: 1.2;
+            background-color: #0040cc;
+        }
+    }
+    
+    @media (max-width: 768px ) {
+        body {
+            margin: 60% auto;
+        }
+        
+        h1, h3 {
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center;
+        }
+        
+        a.button {
+            background-color: #8bc3ff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 auto;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: 200ms;
+        }
+        
+        @media (hover: hover) {
+            a.button:hover,
+            a.button:focus {
+                scale: 1.2;
+                background-color: #0040cc;
+            }
+        }
+    }
+}
