@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Leah Dykema">
@@ -12,7 +12,7 @@
     <body>
         <!-- Menu Nav Bar -->
         <div data-role="header" data-position="fixed" class="nav-container">
-            <nav id="nav-menu">
+            <nav>
                 <!-- desktop nav -->
                 <ul class="desktop-nav">
                     <li><a href="../index.html" class="link-logo"><img src="../img/logo-colored.svg" class="link-logo" alt="I access ability"></a></li>
@@ -26,8 +26,8 @@
         <div class="site">
             <h2>Request Services</h2>
             <div class="form">
-                <form method="POST" action="https://script.google.com/macros/s/AKfycbxXSJDlJSDJwRC_Chk8lD4twhzeKzyommhMcH3ICSbKhUg31awIBSnilSj9su0viVA5/exec">
-                    <input type="hidden" name="Date" id="current-date">
+                <form id="ServiceRequest" method="POST" action="https://formsubmit.co/iAccessAbility@gmail.com">
+                    <input type="date" name="Date" id="current-date" hidden>
                     <label>First Name&#58;</label>
                     <input type="text" name="First Name" required size="15" maxlength="15" placeholder="John">
                     <br>
@@ -66,49 +66,53 @@
                         </label>
                     </div>
                     <br>
+                    <!-- FormSubmit -->
                     <input type="submit" name="request" value="Request Service" class="submit" id="btn" disabled>
+                    <input type="hidden" name="_next" value="https://leahdykema.github.io/iAccessAbility/html/thankyou.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_autoresponse" value="Thank you for request, iAccessAbility will be in touch soon!">
                 </form>
-                <div id="form-message"></div>
             </div>
         </div>
         <script>
+            document.getElementById("ServiceRequest").addEventListener("submit", async function(event) {
+            event.preventDefault(); // Prevent default submission first
+            let formData = new FormData(this);
+            try {
+                // Send data to Google Sheets via Apps Script Webhook
+                const response = await fetch("https://script.google.com/macros/s/AKfycbxXSJDlJSDJwRC_Chk8lD4twhzeKzyommhMcH3ICSbKhUg31awIBSnilSj9su0viVA5/exec", {
+                    method: "POST",
+                    body: formData
+                });
+                // Check if the response is successful
+                if (response.ok) {
+                    console.log("Data submitted successfully to Google Sheets.");
+                } else {
+                    console.error("Failed to submit data:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Error submitting data:", error);
+            }
+            // Now submit the form to FormSubmit (if needed)
+            this.submit();
+        });
+            
             document.addEventListener("DOMContentLoaded", () => {
-                // Form functionality
-                const checkbox = document.getElementById('agreement');
+                const form = document.querySelector("form");
                 const submitButton = document.querySelector('input[name="request"]');
-                const dateField = document.getElementById("current-date");
-                const form = document.querySelector('form');
-                const messageContainer = document.getElementById("form-message");
-                checkbox.addEventListener('change', () => {
-                    submitButton.disabled = !checkbox.checked;
-                });
-                dateField.value = new Date().toISOString().split("T")[0];
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    submitButton.disabled = true;
-                    let requestBody = new FormData(form);
-                    fetch(form.action, { method: 'POST', body: requestBody })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log("Server response:", data); // Debugging line
-                        if (data.result === "success") {
-                            messageContainer.innerHTML = `
-                                <p style="color: green; font-weight: bold;">Success! Your request has been submitted and a comfirmation email sent to your email.</p>`;
-                            form.reset(); // Resest's form
-                            checkbox.checked = false; // Unchecks agreement
-                            submitButton.disabled = true; // Re-disable button after reset
-                        } else {
-                            messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">Error! Something went wrong, please try again.</p>`;
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Fetch error:", error);
-                        messageContainer.innerHTML = `<p style="color: red; font-weight: bold;">Error! Something went wrong, please try again.</p>`;
-                    })
-                    .finally(() => {
-                        submitButton.disabled = false;
+
+                // Function to check if all required fields are filled
+                const checkFormCompletion = () => {
+                    const allFieldsFilled = [...form.querySelectorAll("input[required], select[required]")].every(input => {
+                        return input.type === "checkbox" ? input.checked : input.value.trim() !== "";
                     });
-                });
+
+                    submitButton.disabled = !allFieldsFilled;
+                };
+
+                // Event listeners for input changes
+                form.addEventListener("input", checkFormCompletion);
             });
         </script>
     </body>
