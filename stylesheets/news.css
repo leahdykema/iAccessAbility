@@ -4,6 +4,7 @@
         background-color: #000;
         margin-top: 44px;
         text-align: center;
+        word-wrap: break-word;
         color: #fff;
     }
     
@@ -69,6 +70,7 @@
         background-color: #fff;
         margin-top: 44px;
         text-align: center;
+        word-wrap: break-word;
         color: #000;
     }
     
@@ -132,6 +134,7 @@
 @media (prefers-contrast: more) {
     * {
         font-weight: bold;
+        word-wrap: break-word;
         color: #000;
     }
     
