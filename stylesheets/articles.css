@@ -319,7 +319,9 @@
     }
 
     /* Hidden */
-    #apple-watch-light {
+    #apple-watch-light,
+    #mac-restart-light,
+    #mac-shutdown-light {
         display: none;
     }
 
@@ -666,7 +668,9 @@
     }
 
     /* Hidden */
-    #apple-watch-dark {
+    #apple-watch-dark,
+    #mac-restart-dark,
+    #mac-shutdown-dark {
         display: none;
     }
 
