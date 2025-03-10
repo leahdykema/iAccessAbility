@@ -4,10 +4,299 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>404 Error at iAccessAbility</title>
-        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-        <link rel="apple-touch-icon" type="image/x-icon" href="img/logo-sad.svg">
-        <link rel="stylesheet" href="stylesheets/404.css">
-        <link rel="stylesheet" href="navbar/navbar.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+        <link rel="apple-touch-icon" type="image/x-icon" href="/img/logo-sad.svg">
+        <style>
+            *,
+            *::after,
+            *::before {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Dark theme */
+            @media (prefers-color-scheme: dark) {
+                body {
+                    font-family: "Inter", sans-serif;
+                    font-weight: 300;
+                    overflow-y: scroll;
+                }
+
+                /* nav container */
+                .nav-container {
+                    background: #191919;
+                    backdrop-filter: blur(10px);
+                    height: 44px;
+                    z-index: 300;
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                }
+
+                .nav-container nav {
+                    width: 800px;
+                    margin: 0 auto;
+                    padding: 0 8px;
+                    height: 100%;
+                }
+
+                a {
+                    cursor: default;
+                }
+
+                /* desktop nav */
+                nav .desktop-nav {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                    list-style: none;
+                }
+
+                nav .desktop-nav li a {
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-size: 16px;
+                    transition: all 400ms ease;
+                }
+
+                nav .desktop-nav li a:hover,
+                nav .desktop-nav li a:focus {
+                    color: #8bc3ff;
+                    transform: scale(1.4);
+                }
+
+                /* logo */
+                .link-logo {
+                    background: url(/img/logo-colored.svg);
+                    display: block;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    height: 44px;
+                    width: 40px;
+                }
+
+                /* Desktop Nav Animation */
+                .desktop-nav li {
+                    transition: all 900ms ease;
+                }
+
+                /* media queries */
+                @media (max-width: 1100px) {
+                    .nav-container nav {
+                        width: 70%;
+                        padding: 0 30px;
+                        transition: 200ms;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .nav-container nav {
+                        width: 95%;
+                        padding: 0 30px;
+                        transition: 200ms;
+                    }
+                }
+            }
+
+            /* Light theme */
+            @media (prefers-color-scheme: light) {
+                body {
+                    font-family: "Inter", sans-serif;
+                    font-weight: 300;
+                    overflow-y: scroll;
+                }
+
+                /* nav container */
+                .nav-container {
+                    background: #eee;
+                    backdrop-filter: blur(10px);
+                    height: 44px;
+                    z-index: 300;
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                }
+
+                .nav-container nav {
+                    width: 800px;
+                    margin: 0 auto;
+                    padding: 0 8px;
+                    height: 100%;
+                }
+
+                a {
+                    cursor: default;
+                }
+
+                /* desktop nav */
+                nav .desktop-nav {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                    list-style: none;
+                }
+
+                nav .desktop-nav li a {
+                    color: #000;
+                    text-decoration: none;
+                    font-size: 16px;
+                    transition: all 400ms ease;
+                }
+
+                nav .desktop-nav li a:hover,
+                nav .desktop-nav li a:focus {
+                    color: #0063cc;
+                    transform: scale(1.4);
+                }
+
+                /* logo */
+                .link-logo {
+                    background: url(/img/logo-colored.svg);
+                    display: block;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    height: 44px;
+                    width: 40px;
+                }
+
+                /* media queries */
+                @media (max-width: 1100px) {
+                    .nav-container nav {
+                        width: 70%;
+                        padding: 0 30px;
+                        transition: 200ms;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .nav-container nav {
+                        width: 95%;
+                        padding: 0 30px;
+                        transition: 200ms;
+                    }
+                }
+            }
+
+            /* High Contrast */
+            @media (prefers-contrast: more) {
+                * {
+                    font-weight: bold;
+                }
+
+                .nav-container {
+                    background-color: #fff;
+                    border: solid;
+                }
+
+                nav .desktop-nav li a {
+                    color: #0000ff;
+                    text-decoration: underline;
+                }
+
+                a.link-logo,
+                img.link-logo {
+                    text-decoration: none !important;
+                }
+
+                @media (prefers-color-scheme: dark) {
+                    .nav-container {
+                        background-color: #000;
+                        border: solid;
+                    }
+
+                    nav .desktop-nav li a {
+                        color: #8bc3ff;
+                    }
+
+                    a.link-logo,
+                    img.link-logo {
+                        text-decoration: none !important;
+                    }
+
+                    @media (hover: hover) {
+                        a:hover,
+                        a:focus {
+                            color: #0063cc !important;
+                        }
+                    }
+                }
+            }
+            
+            /* Dark theme */
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: #000;
+                    color: #fff;
+                    margin-top: 44px;
+                    margin-left: 20em;
+                    margin-right: 20em;
+                    text-align: center;
+                    overflow-wrap: break-word;
+                }
+
+                a.link {
+                    color: #8bc3ff;
+                    text-decoration: none;
+                    transition: 200ms ease all;
+                }
+
+                @media (hover: hover) {
+                    a.link:hover,
+                    a.link:focus,
+                    a.link:active {
+                        color: #0063cc;
+                        text-decoration: underline;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    body {
+                        margin-left: 3em;
+                        margin-right: 3em;
+                    }
+                }
+            }
+
+            /* Light theme */
+            @media (prefers-color-scheme: light) {
+                body {
+                    background-color: #fff;
+                    color: #000;
+                    margin-top: 44px;
+                    margin-left: 20em;
+                    margin-right: 20em;
+                    text-align: center;
+                    overflow-wrap: break-word;
+                }
+
+                a.link {
+                    color: #0000ff;
+                    text-decoration: none;
+                    transition: 200ms ease all;
+                }
+
+                @media (hover: hover) {
+                    a.link:hover,
+                    a.link:focus,
+                    a.link:active {
+                        color: #0063cc;
+                        text-decoration: underline;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    body {
+                        margin-left: 3em;
+                        margin-right: 3em;
+                    }
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- Menu Nav Bar -->
@@ -16,24 +305,24 @@
                 <!-- Desktop Menu -->
                 <ul class="desktop-nav">
                     <!-- logo -->
-                    <li><a href="index.html" class="link-logo"><img src="img/logo-colored.svg" class="link-logo" alt="I access ability"></a></li>
+                    <li><a href="/index.html" class="link-logo"><img src="/img/logo-colored.svg" class="link-logo" alt="I access ability"></a></li>
                     <!-- Support -->
-                    <li><a href="html/support.html">Support</a></li>
+                    <li><a href="/html/support.html">Support</a></li>
                     <!-- Connect -->
-                    <li><a href="html/connect.html">Connect</a></li>
+                    <li><a href="/html/connect.html">Connect</a></li>
                     <!-- About -->
-                    <li><a href="html/about.html">About</a></li>
+                    <li><a href="/html/about.html">About</a></li>
                 </ul>
             </nav>
         </div>
         <!-- 404 error Page -->
         <div class="site">
-            <a href="html/dino.html" aria-label="Do you dare visit the dino?"><img src="img/logo-sad.svg" aria-hidden="true" height="200" alt=""></a>
+            <a href="/html/dino.html" aria-label="Do you dare visit the dino?"><img src="img/logo-sad.svg" aria-hidden="true" height="200" alt=""></a>
             <h1>Oops&#33; This page failed to follow ADA compliance... now it&#39;s getting sued &#58;P</h1>
             <br>
             <h3>Looks like you&#39;ve hit a dead link&#33; Double&#45;check the URL&#44; or if you think something&#39;s broken&#44; let us know at <a class="link" href="mailto:support@iaccessabilityservices.com">support&#64;iAccessAbilityServices&#46;com</a> so we can fix it&#46;</h3>
             <br>
-            <h3><a class="link" href="index.html">Pretend this never happened &#40;Return Home&#41;</a></h3>
+            <h3><a class="link" href="/index.html">Pretend this never happened &#40;Return Home&#41;</a></h3>
         </div>
     </body>
 </html>
