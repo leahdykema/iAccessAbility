@@ -26,12 +26,18 @@
     div.agree-section {
         display: block;
         margin: auto;
-        width: 250px:
+        width: 250px;
     }
     
     div.form {
         display: block;
         text-align: center;
+    }
+    
+    p.info {
+        margin: auto;
+        text-align: center;
+        color: #a6a6a6;
     }
     
     form {
@@ -192,7 +198,7 @@
     }
 
     h2 {
-        margin-top: 215;
+        margin-top: 20%;
         margin-bottom: 0;
         font-family: sans-serif;
         font-weight: 500;
@@ -203,6 +209,12 @@
     div.form {
         display: block;
         text-align: center;
+    }
+    
+    p.info {
+        margin: auto;
+        text-align: center;
+        color: #a6a6a6;
     }
     
     form {
