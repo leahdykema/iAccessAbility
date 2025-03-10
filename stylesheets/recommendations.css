@@ -7,10 +7,12 @@
         margin-right: 12%;
         text-align: center;
         color: #fff;
+        overflow-wrap: break-word;
     }
     
     p {
         font-size: 20px;
+        overflow-wrap: break-word;
     }
     
     hr {
@@ -34,6 +36,7 @@
         padding: 20px;
         border-radius: 10px;
         text-align: center;
+        flex-wrap: break-word;
     }
     
     div.card {
@@ -57,6 +60,7 @@
     p.info {
         font-size: 20px;
         color: #a6a6a6;
+        overflow-wrap: break-word;
     }
     
     a.links {
@@ -119,10 +123,12 @@
         margin-right: 12%;
         text-align: center;
         color: #000;
+        overflow-wrap: break-word;
     }
     
     p {
         font-size: 20px;
+        overflow-wrap: break-word;
     }
     
     hr {
@@ -169,6 +175,7 @@
     p.info {
         font-size: 20px;
         color: #a3a3a3;
+        overflow-wrap: break-word;
     }
     
     a.links {
@@ -223,7 +230,7 @@
     }
 }
 
-
+/* High Contrast Settings */
 @media (prefers-contrast: more) {
     * {
         color: #000;
@@ -231,13 +238,13 @@
     }
     
     body {
-        font-weight: bold; /* Improve text clarity */
+        font-weight: bold;
     }
     
     a {
         color: #0000ff !important;
         text-decoration: underline;
-        border-bottom: 1px solid currentColor; /* Make links more visible */
+        border-bottom: 1px solid currentColor;
     }
     
     div.title,
