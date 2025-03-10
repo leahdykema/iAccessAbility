@@ -1,102 +1,127 @@
 document.addEventListener("DOMContentLoaded", () => {
     let gameState = {
-        stage: 1,
-        hasEasyPayAccess: false,
-        hasFoundExit: false,
-        siriHelped: false
+        stage: 1
     };
-
+    
     function logMessage(message) {
         const log = document.getElementById("game-log");
         log.innerHTML += `<p>${message}</p>`;
         log.scrollTop = log.scrollHeight;
     }
-
+    
     function showStageOptions() {
         document.querySelectorAll(".game-button").forEach(button => button.style.display = "none");
-
         if (gameState.stage === 1) {
-            document.getElementById("easyPay").style.display = "block";
             document.getElementById("askSiri").style.display = "block";
-            document.getElementById("hackEasyPay").style.display = "block";
+            document.getElementById("easyPay").style.display = "block";
+            document.getElementById("frontEntrance").style.display = "block";
         } else if (gameState.stage === 2) {
-            document.getElementById("findExit").style.display = "block";
+            document.getElementById("storeKey").style.display = "block";
             document.getElementById("useMac").style.display = "block";
-            document.getElementById("searchGeniusBar").style.display = "block";
+            document.getElementById("storePhone").style.display = "block";
         } else if (gameState.stage === 3) {
-            document.getElementById("finalUnlock").style.display = "block";
             document.getElementById("breakGlass").style.display = "block";
-            document.getElementById("triggerAlarm").style.display = "block";
-        } else {
-            document.querySelectorAll(".game-button").forEach(button => button.remove());
+            document.getElementById("dj").style.display = "block";
+        } else if (gameState.stage === 4) {
+            document.getElementById("ceilingVent").style.display = "block";
+            document.getElementById("callCook").style.display = "block";
+        } else if (gameState.stage === 5 || gameState.stage === 6) {
+            // Remove buttons when game ends
+            document.querySelectorAll(".game-button").forEach(button => button.style.display = "none");
         }
     }
-
-    function progressStage(newStage) {
-        gameState.stage = newStage;
+    
+    function progressStage(stage) {
+        gameState.stage = stage;
+        showStageOptions();
+        if (stage === 5) {
+            logMessage("Oh no! You've been caught or failed to escape! Try again?");
+            document.getElementById("resetGame").style.display = "block";
+        } else if (stage === 6) {
+            logMessage("Congratulations! You've successfully escaped the Apple Store! Maybe next time, watch the time closer so you don’t stay past closing :)");
+           document.getElementById("resetGame").style.display = "block";
+            document.getElementById("backButton").style.display = "block";
+        }
+    }
+    
+    function restartGame() {
+        gameState.stage = 1;
+        document.getElementById("resetGame").style.display = "none";
+        document.getElementById("game-log").innerHTML = "";
+        logMessage("You're back in the Apple Store... Let's try this again!");
         showStageOptions();
     }
-
-    function checkEasyPay() {
-        logMessage("You found an employee iPhone, but it's Face ID locked! You need another way...");
-        progressStage(2);
-    }
-
+    
+    // stage 1
     function askSiri() {
         logMessage("You ask Siri for help... She says 'I’m sorry, I can’t help with that.' Typical.");
         progressStage(2);
     }
-
-    function hackEasyPay() {
-        logMessage("You bypass Face ID and unlock EasyPay! Now find the exit.");
+    
+    function easyPay() {
+        logMessage("You find the EasyPay iPhones in the back charging and pick one up. When you turn it on, you find it locked and requesting an employee Apple Account to sign in, but while you're considering your next options, an alarm goes off!");
+        progressStage(5);
+    }
+    
+    function frontEntrance() {
+        logMessage("You walk up to the entrance doors and pull on the handle, but it doesn't budge. You try pushing, but same thing, it rattles but stays firmly shut.");
         gameState.hasEasyPayAccess = true;
         progressStage(2);
     }
-
-    function findExit() {
-        logMessage("The doors are locked! Maybe there's another way?");
+    
+    // stage 2
+    function storeKey() {
+        logMessage("You head into the back and start looking for a store key to unlock a door. After looking around for a while, you find a key!");
         progressStage(3);
     }
-
+    
     function useMac() {
-        logMessage("You attempt to use a Mac to access security... it's updating.");
-        progressStage(3);
+        logMessage("You look around and decide to try using a display Mac to find a way to unlock the front entrance or the location of a key.");
+        progressStage(5);
     }
-
-    function searchGeniusBar() {
-        logMessage("You find a hidden security key! Maybe this will help.");
+    
+    function storePhone() {
+        logMessage("You decide to look around for a an active store phone. You find one behind the Genius Bar counter and call the police to explain your situation and ask for help!");
         gameState.hasFoundExit = true;
-        progressStage(3);
+        progressStage(6);
     }
-
-    function finalUnlock() {
-        if (gameState.hasFoundExit) {
-            logMessage("You use the security key to unlock the store and escape! You win!");
-        } else {
-            logMessage("You need a security key! Maybe check the Genius Bar?");
-        }
-        progressStage(4);
-    }
-
+    
+    // stage 3
     function breakGlass() {
         logMessage("You try to break the glass, but it's Apple Store glass... impossible.");
-        progressStage(4);
+        progressStage(5);
     }
-
-    function triggerAlarm() {
-        logMessage("You trigger the fire alarm! The doors unlock and you escape! But at what cost?");
-        progressStage(4);
+    
+    function dj() {
+        logMessage("You decide to kill some time and manage to connect the store speakers over the intercom you find behind the counter of the Genius Bar and start rapping one of your favorite songs. Soon, a security guard appears and after explaining your situation, he lets you out!");
+        progressStage(6);
     }
-
-    document.getElementById("easyPay").addEventListener("click", checkEasyPay);
+    
+    // stage 4
+    function ceilingVent() {
+        logMessage("You manage to climb up onto a store table and manage to reach the ceiling where you push up a tile and pull yourself into the vents, but because the tiles are thin and you are too heavy for them to hold, you break through the ceiling and fall back into the store where a security guard soon appears and finds you.");
+        progressStage(5);
+    }
+    
+    function callCook() {
+        logMessage("You pick up a display iPhone, hoping it doesn't trigger an alarm, it doesn't thank goodness! You sign into your Twitter account and tweet Tim Cook in desperation, but don't expect him to respond. Before long, an Apple employee unlocks the front entrance and enters. He lets you out after handing you an Apple Gift card of $1,000 and explaining that Tim Cook had contacted him about you!");
+        progressStage(6);
+    }
+    
+    document.getElementById("easyPay").addEventListener("click", easyPay);
     document.getElementById("askSiri").addEventListener("click", askSiri);
-    document.getElementById("hackEasyPay").addEventListener("click", hackEasyPay);
-    document.getElementById("findExit").addEventListener("click", findExit);
+    document.getElementById("frontEntrance").addEventListener("click", frontEntrance);
+    document.getElementById("storeKey").addEventListener("click", storeKey);
     document.getElementById("useMac").addEventListener("click", useMac);
-    document.getElementById("searchGeniusBar").addEventListener("click", searchGeniusBar);
-    document.getElementById("finalUnlock").addEventListener("click", finalUnlock);
+    document.getElementById("storePhone").addEventListener("click", storePhone);
     document.getElementById("breakGlass").addEventListener("click", breakGlass);
-    document.getElementById("triggerAlarm").addEventListener("click", triggerAlarm);
-
+    document.getElementById("dj").addEventListener("click", dj);
+    document.getElementById("ceilingVent").addEventListener("click", ceilingVent);
+    document.getElementById("callCook").addEventListener("click", callCook);
+    document.getElementById("resetGame").addEventListener("click", restartGame);
+    document.getElementById("backButton").addEventListener("click", () => {
+        window.location.href = "forthegeeks.html";
+    });
+    
     showStageOptions();
 });
