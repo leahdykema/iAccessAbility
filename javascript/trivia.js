@@ -98,9 +98,27 @@ function nextQuestion() {
         document.getElementById("quiz-container").innerHTML = `
             <p>Quiz complete! You got <strong>${score} out of ${questions.length}</strong> correct.</p>
             <br>
+            <button onclick='resetGame()'>Play Again</button>
+            <br>
             <button onclick='goBack()'>Go Back</button>
         `;
     }
+}
+// Resets game
+function resetGame() {
+    // Reset variables
+    currentQuestionIndex = 0;
+    score = 0;
+    // Reload the first question
+    document.getElementById("quiz-container").innerHTML = `
+        <h2 id="question"></h2>
+        <ul id="options"></ul>
+        <div id="fun-fact" class="hidden">
+            <p id="fact"></p>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    `;
+    displayQuestion();
 }
 // Takes user to previous page
 function goBack() {
