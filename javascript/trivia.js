@@ -89,6 +89,7 @@ function checkAnswer(selectedIndex) {
 // Move to the next question
 function nextQuestion() {
     currentQuestionIndex++;
+    document.getElementById("options").style.display = "block";
     if (currentQuestionIndex < questions.length) {
         displayQuestion();
     } else {
