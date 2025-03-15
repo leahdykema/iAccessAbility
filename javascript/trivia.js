@@ -77,6 +77,7 @@ function displayQuestion() {
 function checkAnswer(selectedIndex) {
     const correctAnswers = questions[currentQuestionIndex].correct; // Array of correct answers
     const fact = questions[currentQuestionIndex].fact;
+    document.getElementById("options").style.display = "none";
     if (correctAnswers.includes(selectedIndex)) {
         document.getElementById("fun-fact").classList.remove("hidden");
         document.getElementById("fact").textContent = `Correct! ${fact}`;
