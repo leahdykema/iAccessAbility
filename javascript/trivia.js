@@ -56,6 +56,7 @@ const questions = [
     }
 ];
 let currentQuestionIndex = 0;
+let score = 0; // Tracks the number of correct answers
 // Display the current question
 function displayQuestion() {
     const question = questions[currentQuestionIndex];
@@ -81,6 +82,7 @@ function checkAnswer(selectedIndex) {
     if (correctAnswers.includes(selectedIndex)) {
         document.getElementById("fun-fact").classList.remove("hidden");
         document.getElementById("fact").textContent = `Correct! ${fact}`;
+        score++; // Increase score if the answer is correct
     } else {
         document.getElementById("fun-fact").classList.remove("hidden");
         document.getElementById("fact").textContent = `Oops! The correct answers are: ${correctAnswers.map(index => questions[currentQuestionIndex].options[index]).join(" and ")}. ${fact}`;
@@ -94,9 +96,9 @@ function nextQuestion() {
         displayQuestion();
     } else {
         document.getElementById("quiz-container").innerHTML = `
-            <h2>You've completed the quiz! Thanks for playing!</h2>
+            <p>Quiz complete! You got <strong>${score} out of ${questions.length}</strong> correct.</p>
             <br>
-            <button onclick="goBack()">Back to Previous Page</button>
+            <button onclick='goBack()'>Go Back</button>
         `;
     }
 }
