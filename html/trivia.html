@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Leah Dykema">
+        <meta name="description" content="Learn about some fun facts about technology and accessibility in this simple game.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:image" name="image" content="../img/favicon.png">
+        <meta property="og:title" content="Tech Trivia - iAccessAbility">
+        <meta property="og:description" content="Learn about some fun facts about technology and accessibility in this simple game.">
+        <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico?">
+        <link rel="apple-touch-icon" type="image/x-icon" href="../img/favicon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../img/favicon.ico">
+        <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="../img/favicon.ico">
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../img/favicon.ico">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../img/favicon.ico">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../img/favicon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="../img/favicon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../img/favicon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../img/favicon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="../img/favicon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="../img/favicon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="../img/favicon.png">
+        <title>Tech Trivia &#45; iAccessAbility</title>
+        <link rel="stylesheet" href="../stylesheets/trivia.css">
+        <link rel="stylesheet" href="../navbar/navbar.css">
+    </head>
+    <body>
+        <!-- Menu Nav Bar -->
+        <div data-role="header" data-position="fixed" class="nav-container">
+            <nav>
+                <!-- desktop nav -->
+                <ul class="desktop-nav">
+                    <!-- logo -->
+                    <li><a href="../index.html" class="link-logo"><img src="../img/logo-colored.svg" class="link-logo" alt="I access ability"></a></li>
+                    <!-- Support -->
+                    <li><a href="support.html">Support</a></li>
+                    <!-- Connect -->
+                    <li><a href="connect.html">Connect</a></li>
+                    <!-- About -->
+                    <li><a href="about.html">About</a></li>
+                    <!-- Resources -->
+                </ul>
+            </nav>
+        </div>
+        <!-- Trivia Page -->
+        <div class="site">
+            <h1>Tech &amp; Accessibility Trivia</h1>
+            <div class="container">
+                <div id="quiz-container">
+                    <div id="question-container">
+                        <p id="question"></p>
+                        <ul id="options">
+                            <li onclick="checkAnswer(0)">Option 1</li>
+                            <li onclick="checkAnswer(1)">Option 2</li>
+                            <li onclick="checkAnswer(2)">Option 3</li>
+                            <li onclick="checkAnswer(3)">Option 4</li>
+                        </ul>
+                    </div>
+                    <div id="fun-fact" class="hidden">
+                        <p id="fact"></p>
+                        <br>
+                        <button onclick="nextQuestion()">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../javascript/trivia.js"></script>
+    </body>
+</html>
