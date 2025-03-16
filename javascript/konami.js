@@ -1,7 +1,64 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Create the icon container
+    const iconContainer = document.createElement("div");
+    iconContainer.setAttribute("id", "konami-icon");
+    iconContainer.style.position = "fixed";
+    iconContainer.style.bottom = "20px";
+    iconContainer.style.left = "20px";
+    iconContainer.style.width = "50px";
+    iconContainer.style.height = "50px";
+    iconContainer.style.backgroundColor = "rgba(20, 20, 99, 0.9)";
+    iconContainer.style.backdrop = "blur(2)";
+    iconContainer.style.webkitBackdropFilter = "blur(2px)";
+    iconContainer.style.borderRadius = "50%";
+    iconContainer.style.display = "flex";
+    iconContainer.style.alignItems = "center";
+    iconContainer.style.justifyContent = "center";
+    iconContainer.style.color = "#fff";
+    iconContainer.style.fontSize = "24px";
+    iconContainer.style.cursor = "pointer";
+    iconContainer.style.zIndex = "1000";
+    iconContainer.setAttribute("aria-label", "Try pressing the arrow up key for a hidden surprise!");
+    iconContainer.innerHTML = "";
+    // Create the hint bubble
+    const hintBubble = document.createElement("div");
+    hintBubble.setAttribute("id", "hint-bubble");
+    hintBubble.style.position = "fixed";
+    hintBubble.style.bottom = "20px"; // Align it to the bottom of the icon
+    hintBubble.style.left = "80px"; // Position it to the left of the icon
+    hintBubble.style.backgroundColor = "rgba(20, 20, 99, 0.8)";
+    hintBubble.style.backdrop = "blur(2)";
+    hintBubble.style.webkitBackdropFilter = "blur(2px)";
+    hintBubble.style.color = "#fff";
+    hintBubble.style.padding = "10px";
+    hintBubble.style.fontSize = "14px";
+    hintBubble.style.borderRadius = "10px";
+    hintBubble.style.maxWidth = "200px";
+    hintBubble.style.transform = "scaleX(0)"; // Initially hidden
+    hintBubble.style.transformOrigin = "left"; // To scale from left
+    hintBubble.style.transition = "transform 0.3s ease-in-out";
+    hintBubble.style.zIndex = "999"; // Make sure it's above the icon
+    hintBubble.style.pointerEvents = "none"; // Prevent interaction until shown
+    hintBubble.innerHTML = "Some secrets are unlocked with the right combination of keys &#46;&#46;&#46; &#40;try starting with Up, Up&#41;"; // The hint text
+    // Append icon and bubble to the body
+    document.body.appendChild(iconContainer);
+    document.body.appendChild(hintBubble);
+    // Toggle the hint bubble when the icon is clicked
+    iconContainer.addEventListener("click", function() {
+        if (hintBubble.style.transform === "scaleX(0)") {
+            hintBubble.style.transform = "scaleX(1)"; // Show the bubble with scale animation
+            hintBubble.style.pointerEvents = "auto"; // Enable interaction when shown
+        } else {
+            hintBubble.style.transform = "scaleX(0)"; // Hide the bubble with scale animation
+            hintBubble.style.pointerEvents = "none"; // Disable interaction when hidden
+        }
+    });
+});
+
 // Create and inject the popup HTML
 const popupHTML = `
     <div id="konami-popup" style="display: none;">
-        <p>Are you curious enough???</p>
+        <p class="konami">Are you curious enough???</p>
         <div class="konami-container">
             <div class="arrow">↑</div>
             <div class="arrow">↑</div>
@@ -14,8 +71,8 @@ const popupHTML = `
             <div class="arrow">B</div>
             <div class="arrow">A</div>
         </div>
-        <p id="konami-message">Press Esc to close</p>
-        <p id="countdown-timer"></p>
+        <p class="konami" id="konami-message">Press Esc to close</p>
+        <p class="konami" id="countdown-timer"></p>
     </div>
 `;
 document.body.insertAdjacentHTML("beforeend", popupHTML);
@@ -24,80 +81,100 @@ const popupStyles = document.createElement("style");
 popupStyles.textContent = `
     @media (prefers-color-scheme: dark) {
         #konami-popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #000;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            text-align: center;
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            background: #000 !important;
+            padding: 20px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
+            border-radius: 10px !important;
+            text-align: center !important;
+            z-index: 9999 !important;
         }
         
         .konami-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 10px 0;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 10px !important;
+            margin: 10px 0 !important;
+        }
+        
+        .konami {
+            text-align: center !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 20px !important;
         }
         
         .arrow {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #222;
-            border-radius: 5px;
-            font-size: 20px;
-            font-weight: bold;
-            transition: background 0.3s ease;
+            width: 40px !important;
+            height: 40px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background: #222 !important;
+            border-radius: 5px !important;
+            font-size: 20px !important;
+            font-weight: bold !important;
+            transition: background 0.3s ease !important;
         }
         
         .arrow.correct {
-            background: #4CAF50; /* Green for correct */
-            color: white;
+            background: #4CAF50 !important; /* Green for correct */
+            color: #fff !important;
         }
     }
     
     @media (prefers-color-scheme: light) {
         #konami-popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            text-align: center;
-            color: #000;
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            background: #fff !important;
+            padding: 20px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
+            border-radius: 10px !important;
+            text-align: center !important;
+            color: #000 !important;
+            z-index: 9999 !important;
         }
         
         .konami-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 10px 0;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 10px !important;
+            margin: 10px 0 !important;
+        }
+        
+        .konami {
+            text-align: center !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 20px !important;
         }
         
         .arrow {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #ddd;
-            border-radius: 5px;
-            font-size: 20px;
-            font-weight: bold;
-            transition: background 0.3s ease;
+            width: 40px !important;
+            height: 40px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background: #ddd !important;
+            border-radius: 5px !important;
+            font-size: 20px !important;
+            font-weight: bold !important;
+            transition: background 0.3s ease !important;
         }
         
         .arrow.correct {
-            background: #4CAF50; /* Green for correct */
-            color: black;
+            background: #4CAF50 !important; /* Green for correct */
+            color: #000 !important;
+        }
+    }
+    
+    @media (max-width: 1028px) {
+        #konami-icon {
+            display: none !important;
         }
     }
 `;
@@ -109,6 +186,8 @@ const konamiCode = [
     "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
     "b", "a"
 ];
+
+let timer = null;
 
 // Show popup when the up arrow is first pressed
 document.addEventListener("keydown", function (event) {
@@ -129,14 +208,16 @@ document.addEventListener("keydown", function (event) {
             document.getElementById("konami-message").textContent = "Konami Code Entered!";
             let countdown = 5; // Set countdown time
             document.getElementById("countdown-timer").textContent = countdown;
-            let timer = setInterval(() => {
+            // Clear any existing timer before starting a new one
+            clearInterval(timer);
+            timer = setInterval(() => {
                 countdown--;
-                document.getElementById("countdown-timer").textContent = "Redirecting in: " + countdown;
+                document.getElementById("countdown-timer").textContent = "Redirecting in: " + countdown + " seconds...";
                 if (countdown === 0) {
                     clearInterval(timer);
                     window.location.href = "/html/trivia.html";
                 }
-            }, 1000); // 5-second delay
+            }, 1000);
         }
     } else {
         // Wrong key resets the sequence
@@ -145,9 +226,13 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-// Function to close the popup
+// Function to close the popup and cancel the timer
 function closePopup() {
     document.getElementById("konami-popup").style.display = "none";
+    clearInterval(timer); // Cancel countdown if running
+    document.getElementById("countdown-timer").textContent = ""; // Clear the countdown text
+    konamiIndex = 0; // Reset the Konami sequence
+    document.querySelectorAll(".arrow").forEach(arrow => arrow.classList.remove("correct"));
 }
 
 let konamiIndex = 0; // Track progress
