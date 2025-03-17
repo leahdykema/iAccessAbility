@@ -54,6 +54,10 @@
         font-size: 17px;
         color: #a6a6a6;
     }
+    
+    p.info:last-child {
+        margin-bottom: 0;
+    }
 
     div.img-and-text {
         display: flex;
@@ -267,6 +271,10 @@
         text-align: left;
         font-size: 20px;
         color: #a6a6a6;
+    }
+    
+    p.info:last-child {
+        margin-bottom: 0;
     }
 
     div.img-and-text {
@@ -617,6 +625,10 @@
         text-align: left;
         font-size: 20px;
         color: #a3a3a3;
+    }
+    
+    p.info:last-child {
+        margin-bottom: 0;
     }
 
     div.img-and-text {
