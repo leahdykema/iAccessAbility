@@ -172,7 +172,7 @@ popupStyles.textContent = `
         }
     }
     
-    @media (max-width: 1500px) {
+    @media (max-width: 1450px) {
         #konami-icon {
             display: none !important;
         }
