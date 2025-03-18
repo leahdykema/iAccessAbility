@@ -9,7 +9,7 @@
         const iconContainer = document.createElement("div");
         iconContainer.id = "konami-icon";
         iconContainer.setAttribute("aria-label", "Try pressing the arrow up key for a hidden surprise!");
-        iconContainer.innerHTML = "";
+        iconContainer.innerHTML = "&#xF8FF;";
         // Hint Bubble
         const hintBubble = document.createElement("div");
         hintBubble.id = "hint-bubble";
@@ -40,14 +40,14 @@
         controller.id = "touch-controller";
         controller.style.display = "none"; // Start hidden
         controller.innerHTML = `
-            <div class="button" data-key="ArrowUp">↑</div>
-            <div class="button" data-key="ArrowDown">↓</div>
-            <div class="button" data-key="ArrowLeft">←</div>
-            <div class="button" data-key="ArrowRight">→</div>
-            <div class="button" data-key="a">A</div>
-            <div class="button" data-key="b">B</div>
-            <div class="button" data-key="x">X</div>
-            <div class="button" data-key="y">Y</div>
+            <div class="button btn-arrow" data-key="ArrowUp">↑</div>
+            <div class="button btn-arrow" data-key="ArrowDown">↓</div>
+            <div class="button btn-arrow" data-key="ArrowLeft">←</div>
+            <div class="button btn-arrow" data-key="ArrowRight">→</div>
+            <div class="button btn-a" data-key="a">A</div>
+            <div class="button btn-b" data-key="b">B</div>
+            <div class="button btn-x" data-key="x">X</div>
+            <div class="button btn-y" data-key="y">Y</div>
         `;
         // Append elements to body
         document.body.appendChild(iconContainer);
@@ -72,6 +72,7 @@
                     position: fixed !important;
                     top: 50% !important;
                     left: 50% !important;
+                    max-width: 100%;
                     transform: translate(-50%, -50%) !important;
                     background: #000 !important;
                     padding: 20px !important;
@@ -109,7 +110,7 @@
                 }
 
                 .arrow.correct {
-                    background: #4CAF50 !important; /* Green for correct */
+                    background: #388E3C !important; /* Green for correct */
                     color: #fff !important;
                 }
 
@@ -140,16 +141,29 @@
                     transition: background 0.3s ease;
                 }
 
-                .button:hover {
-                    background: #4CAF50;
+                .btn-arrow:hover {
+                    background: #fff;
+                    color: #000;
                 }
                 
-                @media (max-width: 768px) {
-                    #konami-popup {
-                        width: 90%;
-                        height: auto;
-                        overflow: auto;
-                    }
+                .btn-a:hover {
+                    background: #00ff00;
+                    color: #000;
+                }
+                
+                .btn-b:hover {
+                    background: #ff0000;
+                    color: #fff;
+                }
+                
+                .btn-x:hover {
+                    background: #0000ff;
+                    color: #fff;
+                }
+                
+                .btn-y:hover {
+                    background: #ffff00;
+                    color: #000;
                 }
             }
 
@@ -159,6 +173,7 @@
                     position: fixed !important;
                     top: 50% !important;
                     left: 50% !important;
+                    max-width: 100%;
                     transform: translate(-50%, -50%) !important;
                     background: #fff !important;
                     padding: 20px !important;
@@ -196,7 +211,7 @@
                 }
 
                 .arrow.correct {
-                    background: #4CAF50 !important; /* Green for correct */
+                    background: #4CFF50 !important; /* Green for correct */
                     color: #000 !important;
                 }
 
@@ -218,8 +233,8 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background: #222;
-                    color: white;
+                    background: #eee;
+                    color: #000;
                     border-radius: 50%;
                     font-size: 20px;
                     font-weight: bold;
@@ -227,29 +242,27 @@
                     transition: background 0.3s ease;
                 }
 
-                .button:hover,
-                .button:focus {
-                    background: #4CAF50;
+                .btn-arrow:hover {
+                    background: #000;
+                    color: #fff;
                 }
                 
-                .button:active {
-                    background: #388E3C;
+                .btn-a:hover {
+                    background: #00ff00;
                 }
                 
-                @media (max-width: 768px) {
-                    #konami-popup {
-                        width: 90%;
-                        height: auto;
-                        overflow: auto;
-                    }
+                .btn-b:hover {
+                    background: #ff0000;
+                    color: #fff;
                 }
-            }
-            
-            @media (max-width: 768px) {
-                #konami-popup {
-                    width: 90%;
-                    height: auto;
-                    overflow: auto;
+                
+                .btn-x:hover {
+                    background: #0000ff;
+                    color: #fff;
+                }
+                
+                .btn-y:hover {
+                    background: #ffff00;
                 }
             }
             
@@ -295,10 +308,15 @@
             #touch-controller {
                 display: ${isTouchDevice ? 'flex' : 'none'}; /* Hide on desktop */
             }
+            
+            @media (max-width: 768px) {
+                #touch-controller {
+                    width: 70%;
+                }
+            }
         `;
         document.head.appendChild(style);
     }
-    
     document.addEventListener("DOMContentLoaded", function () {
         // Check for touch support on initial load
         window.addEventListener('touchstart', function onFirstTouch() {
@@ -311,10 +329,16 @@
         const konamiMessage = popup.querySelector("#konami-message"); // Access elements within the popup
         const countdownTimer = popup.querySelector("#countdown-timer");
         const arrows = popup.querySelectorAll(".arrow");
+        // Function to reset Konami Code
+        function resetKonamiCode() {
+            konamiIndex = 0;
+            arrows.forEach(arrow => arrow.classList.remove("correct"));
+        }
         // Toggle Popup and Controller visibility
         function toggleDisplay(event) {
             event.preventDefault();
             if (isTouchDevice) {
+                resetKonamiCode();
                 popup.style.display = (popup.style.display === "block") ? "none" : "block";
                 controller.style.display = (controller.style.display === "flex") ? "none" : "flex";
                 hintBubble.style.display = "none";
@@ -336,11 +360,6 @@
         iconContainer.addEventListener("touchstart", toggleDisplay);
         // Event listener for Konami Message to dismiss Popup
         konamiMessage.addEventListener("click", closePopup);
-        // Function to reset Konami Code
-        function resetKonamiCode() {
-            konamiIndex = 0;
-            arrows.forEach(arrow => arrow.classList.remove("correct"));
-        }
         // Countdown function
         function startCountdown() {
             let countdown = 5;
