@@ -230,7 +230,7 @@
             }
             
             @media (max-width) {
-                #konami-container {
+                #konami-popup {
                     width: 80%;
                     overflow: auto;
                 }
