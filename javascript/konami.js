@@ -143,6 +143,13 @@
                 .button:hover {
                     background: #4CAF50;
                 }
+                
+                @media (max-width: 768px) {
+                    #konami-popup {
+                        width: 80%;
+                        overflow: auto;
+                    }
+                }
             }
 
             @media (prefers-color-scheme: light) {
@@ -227,9 +234,16 @@
                 .button:active {
                     background: #388E3C;
                 }
+                
+                @media (max-width: 768px) {
+                    #konami-popup {
+                        width: 80%;
+                        overflow: auto;
+                    }
+                }
             }
             
-            @media (max-width) {
+            @media (max-width: 768px) {
                 #konami-popup {
                     width: 80%;
                     overflow: auto;
