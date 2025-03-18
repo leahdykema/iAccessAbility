@@ -9,11 +9,11 @@
         const iconContainer = document.createElement("div");
         iconContainer.id = "konami-icon";
         iconContainer.setAttribute("aria-label", "Try pressing the arrow up key for a hidden surprise!");
-        iconContainer.innerHTML = "&#xF8FF;";
+        iconContainer.innerHTML = "&#127918;";
         // Hint Bubble
         const hintBubble = document.createElement("div");
         hintBubble.id = "hint-bubble";
-        hintBubble.innerHTML = "Some secrets are unlocked with the right combination of keys... (try starting with Up, Up)</p>";
+        hintBubble.innerHTML = "Some secrets are unlocked with the right combination of keys... (try starting with Up, Up)";
         // Popup
         const popup = document.createElement("div");
         popup.id = "konami-popup";
@@ -273,7 +273,7 @@
                 left: 20px;
                 width: 50px;
                 height: 50px;
-                background-color: rgba(20, 20, 99, 0.9);
+                background-color: rgba(30, 144, 255, 0.6);
                 backdrop-filter: blur(2px);
                 -webkit-backdrop-filter: blur(2px);
                 border-radius: 50%;
@@ -290,7 +290,7 @@
                 position: fixed;
                 bottom: 20px;
                 left: 80px;
-                background-color: rgba(20, 20, 99, 0.8);
+                background-color: rgba(30, 144, 255, 0.6);
                 backdrop-filter: blur(2px);
                 -webkit-backdrop-filter: blur(2px);
                 color: #fff;
