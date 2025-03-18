@@ -147,6 +147,7 @@
                 @media (max-width: 768px) {
                     #konami-popup {
                         width: 80%;
+                        height: auto;
                         overflow: auto;
                     }
                 }
@@ -238,6 +239,7 @@
                 @media (max-width: 768px) {
                     #konami-popup {
                         width: 80%;
+                        height: auto;
                         overflow: auto;
                     }
                 }
@@ -246,6 +248,7 @@
             @media (max-width: 768px) {
                 #konami-popup {
                     width: 80%;
+                    height: auto;
                     overflow: auto;
                 }
             }
