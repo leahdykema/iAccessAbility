@@ -229,6 +229,12 @@
                 }
             }
             
+            @media (max-width) {
+                #konami-container {
+                    width: 90%;
+                }
+            }
+            
             /* Add styles for the icon and hint bubble here, including responsiveness */
             #konami-icon {
                 position: fixed;
