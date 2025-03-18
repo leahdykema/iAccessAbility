@@ -232,6 +232,7 @@
             @media (max-width) {
                 #konami-container {
                     width: 80%;
+                    overflow: auto;
                 }
             }
             
