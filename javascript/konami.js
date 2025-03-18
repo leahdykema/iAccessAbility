@@ -291,8 +291,8 @@
                 bottom: 20px;
                 left: 80px;
                 background-color: rgba(30, 144, 255, 0.6);
-                backdrop-filter: blur(2px);
-                -webkit-backdrop-filter: blur(2px);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
                 color: #fff;
                 padding: 10px;
                 font-size: 14px;
