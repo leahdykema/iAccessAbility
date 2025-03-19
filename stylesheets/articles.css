@@ -330,7 +330,8 @@
     #apple-watch-light,
     #mac-restart-light,
     #mac-shutdown-light,
-    #rotor-counter-clockwise-light {
+    #rotor-counter-clockwise-light,
+    #bsi-activation-gesture-light {
         display: none;
     }
 
@@ -684,7 +685,8 @@
     #apple-watch-dark,
     #mac-restart-dark,
     #mac-shutdown-dark,
-    #rotor-counter-clockwise-dark {
+    #rotor-counter-clockwise-dark,
+    #bsi-activation-gesture-dark {
         display: none;
     }
 
