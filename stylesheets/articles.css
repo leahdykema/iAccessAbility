@@ -329,7 +329,8 @@
     /* Hidden */
     #apple-watch-light,
     #mac-restart-light,
-    #mac-shutdown-light {
+    #mac-shutdown-light,
+    #rotor-counter-clockwise-light {
         display: none;
     }
 
@@ -682,7 +683,8 @@
     /* Hidden */
     #apple-watch-dark,
     #mac-restart-dark,
-    #mac-shutdown-dark {
+    #mac-shutdown-dark,
+    #rotor-counter-clockwise-dark {
         display: none;
     }
 
