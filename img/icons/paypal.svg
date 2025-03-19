@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.8125,0,0,0.8125,400,400)">
+        <g transform="matrix(1,0,0,1,-400,-400)">
+            <clipPath id="_clip1">
+                <rect x="0" y="0" width="800" height="800"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g id="icons" transform="matrix(40,0,0,40,-6580,-295960)">
+                    <g id="Page-1">
+                        <g id="Dribbble-Light-Preview">
+                            <g id="icons1" serif:id="icons">
+                                <path id="paypal---140-" serif:id="paypal-[#140]" d="M182.475,7404.9C181.261,7410.12 177.556,7411 172.579,7411L171.078,7419L173.825,7419C174.326,7419 174.536,7418.66 174.628,7418.18C175.313,7413.85 175.217,7414.56 175.279,7413.88C175.338,7413.5 175.665,7413 176.049,7413C179.698,7413 182.118,7411.94 182.858,7408.16C183.12,7406.81 183.034,7405.77 182.475,7404.9M171.134,7410.86L170.012,7417L166.535,7417C166.206,7417 165.955,7416.6 166.007,7416.27L168.603,7399.75C168.671,7399.32 169.045,7399 169.484,7399L175.718,7399C179.409,7399 181.895,7400.4 181.32,7404.05C180.314,7410.56 174.737,7410 172.2,7410C171.76,7410 171.204,7410.43 171.134,7410.86"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
