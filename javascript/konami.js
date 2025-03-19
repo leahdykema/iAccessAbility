@@ -306,11 +306,12 @@
             }
             
             #touch-controller {
-                display: ${isTouchDevice ? 'flex' : 'none'}; /* Hide on desktop */
+                display: none; /* Hide on desktop */
             }
             
             @media (max-width: 768px) {
                 #touch-controller {
+                    display: ${isTouchDevice ? 'flex' : 'none'};
                     width: 70%;
                 }
             }
@@ -351,15 +352,28 @@
                     hintBubble.style.pointerEvents = "none";
                 }
                 popup.style.display = "none"; // Hide the popup
-                controller.style.display = "none"; // Hide the popup
+                controller.style.display = "none"; // Hide the controller
                 hintBubble.style.display = "block";
             }
         }
-        // Event listener for icon to toggle popup
-        iconContainer.addEventListener("click", toggleDisplay);
-        iconContainer.addEventListener("touchstart", toggleDisplay);
-        // Event listener for Konami Message to dismiss Popup
-        konamiMessage.addEventListener("click", closePopup);
+        // Check Konami Code function
+        function checkKonamiCode(key) {
+            if (isTouchDevice) {
+                controller.style.display = "flex";
+            } else {
+                controller.style.display = "none"; // Hide the controller on desktop
+            }
+            if (key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
+                arrows[konamiIndex].classList.add("correct");
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    konamiMessage.textContent = "Konami Code Entered!";
+                    startCountdown();
+                }
+            } else {
+                resetKonamiCode();
+            }
+        }
         // Countdown function
         function startCountdown() {
             let countdown = 5;
@@ -382,19 +396,11 @@
             clearInterval(timer);
             countdownTimer.textContent = "";
         }
-        // Check Konami Code function
-        function checkKonamiCode(key) {
-            if (key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
-                arrows[konamiIndex].classList.add("correct");
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    konamiMessage.textContent = "Konami Code Entered!";
-                    startCountdown();
-                }
-            } else {
-                resetKonamiCode();
-            }
-        }
+        // Event listener for icon to toggle popup
+        iconContainer.addEventListener("click", toggleDisplay);
+        iconContainer.addEventListener("touchstart", toggleDisplay);
+        // Event listener for Konami Message to dismiss Popup
+        konamiMessage.addEventListener("click", closePopup);
         // Keydown event listener for keyboard input
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
