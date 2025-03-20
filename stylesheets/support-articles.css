@@ -34,6 +34,10 @@
         font-weight: 500;
     }
 
+    h4 {
+        margin-top: 10px;
+    }
+
     p {
         padding-top: 8px;
         padding-bottom: 8px;
@@ -194,6 +198,10 @@
         font-size: 25px;
         text-align: center;
         font-weight: 500;
+    }
+
+    h4 {
+        margin-top: 10px;
     }
 
     p {
