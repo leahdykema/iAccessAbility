@@ -92,6 +92,22 @@
         padding-top: 30px;
         height: 300px;
     }
+    
+    .iphone {
+        display: none;
+    }
+    
+    #iphone {
+        display: none;
+    }
+    
+    .ipad {
+        display: block;
+    }
+    
+    #ipad {
+        display: block;
+    }
 }
 
 @media (max-width: 768px) {
@@ -187,6 +203,22 @@
         margin: auto;
         padding-top: 20px;
         height: 250px;
+    }
+    
+    .iphone {
+        display: block;
+    }
+    
+    #iphone {
+        display: block;
+    }
+    
+    .ipad {
+        display: none;
+    }
+    
+    #ipad {
+        display: none;
     }
 }
 
@@ -331,7 +363,8 @@
     #mac-restart-light,
     #mac-shutdown-light,
     #rotor-counter-clockwise-light,
-    #bsi-activation-gesture-light {
+    #bsi-activation-gesture-light,
+    #accessibility-shortcut-menu-light {
         display: none;
     }
 
@@ -358,7 +391,23 @@
         color: #0063cc;
         text-decoration: underline;
     }
-
+    
+    .iphone {
+        display: none;
+    }
+    
+    #iphone {
+        display: none;
+    }
+    
+    .ipad {
+        display: block;
+    }
+    
+    #ipad {
+        display: block;
+    }
+    
     /* Media Queries */
     @media (max-width: 1100px) {
         body {
@@ -542,6 +591,22 @@
             margin: auto;
             padding-top: 20px;
             height: 250px;
+        }
+        
+        .iphone {
+            display: block;
+        }
+        
+        #iphone {
+            display: block;
+        }
+        
+        .ipad {
+            display: none;
+        }
+        
+        #ipad {
+            display: none;
         }
     }
 }
@@ -686,7 +751,8 @@
     #mac-restart-dark,
     #mac-shutdown-dark,
     #rotor-counter-clockwise-dark,
-    #bsi-activation-gesture-dark {
+    #bsi-activation-gesture-dark,
+    #accessibility-shortcut-menu-dark {
         display: none;
     }
 
@@ -713,7 +779,23 @@
         color: #0063cc;
         text-decoration: underline;
     }
-
+    
+    .iphone {
+        display: none;
+    }
+    
+    #iphone {
+        display: none;
+    }
+    
+    .ipad {
+        display: block;
+    }
+    
+    #ipad {
+        display: block;
+    }
+    
     /* Media Queries */
     @media (max-width: 1100px) {
         body {
@@ -896,6 +978,22 @@
             margin: auto;
             padding-top: 20px;
             height: 250px;
+        }
+        
+        .iphone {
+            display: block;
+        }
+        
+        #iphone {
+            display: block;
+        }
+        
+        .ipad {
+            display: none;
+        }
+        
+        #ipad {
+            display: none;
         }
     }
 }
