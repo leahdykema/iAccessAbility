@@ -9,6 +9,14 @@ img.example-images.instruction-screenshot.active {
     animation: fadeIn 0.5;
 }
 
+#truetone {
+    display: none;
+}
+
+#truetone:target {
+    display: block;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
