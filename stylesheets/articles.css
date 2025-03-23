@@ -1,4 +1,23 @@
 @import "fonts.css";
+/* Apply to all widths and both light and dark mode */
+img.example-images.instruction-screenshot {
+    display: none;
+}
+
+img.example-images.instruction-screenshot.active {
+    display: block;
+    animation: fadeIn 0.5;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 /* Media Queries */
 @media (max-width: 1100px) {
@@ -37,6 +56,10 @@
         font-size: 20px;
         font-weight: 300;
         text-align: left;
+    }
+
+    b {
+        font-weight: 600;
     }
 
     ol.instructions-list {
@@ -145,6 +168,10 @@
         font-size: 18px;
         font-weight: 300;
         text-align: left;
+    }
+
+    b {
+        font-weight: 500;
     }
 
     hr {
@@ -273,6 +300,10 @@
         text-align: left;
     }
 
+    b {
+        font-weight: 600;
+    }
+
     hr {
         display: block;
         margin: auto;
@@ -364,7 +395,9 @@
     #mac-shutdown-light,
     #rotor-counter-clockwise-light,
     #bsi-activation-gesture-light,
-    #accessibility-shortcut-menu-light {
+    #accessibility-shortcut-menu-light,
+    #edit-controls-ios-17-light,
+    .example-images.light {
         display: none;
     }
 
@@ -533,6 +566,10 @@
             font-size: 18px;
             font-weight: 300;
             text-align: left;
+        }
+
+        b {
+            font-weight: 500;
         }
 
         hr {
@@ -662,6 +699,10 @@
         text-align: left;
     }
 
+    b {
+        font-weight: 600;
+    }
+
     hr {
         display: block;
         margin: auto;
@@ -752,7 +793,9 @@
     #mac-shutdown-dark,
     #rotor-counter-clockwise-dark,
     #bsi-activation-gesture-dark,
-    #accessibility-shortcut-menu-dark {
+    #accessibility-shortcut-menu-dark,
+    #edit-controls-ios-17-dark,
+    .example-images.dark {
         display: none;
     }
 
@@ -921,6 +964,10 @@
             font-size: 18px;
             font-weight: 300;
             text-align: left;
+        }
+
+        b {
+            font-weight: 400;
         }
 
         hr {
