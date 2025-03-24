@@ -324,5 +324,16 @@
             <br>
             <h3><a class="link" href="/index.html">Pretend this never happened &#40;Return Home&#41;</a></h3>
         </div>
+        <script>
+            window.onload = function() {
+                var path = window.location.pathname; // Get the current path
+                window.location.replace(window.location.pathname === '/articles' ? '/html/support-articles.html' :
+                    window.location.pathname === '/recommendations' ? '/html/recommendations.html' :
+                    window.location.pathname === '/news' ? '/news/index.html' :
+                    window.location.pathname === '/about' ? '/html/about.html' :
+                    window.location.pathname === '/contact' ? '/html/contact.html' :
+                '/404.html');
+            };
+        </script>
     </body>
 </html>
