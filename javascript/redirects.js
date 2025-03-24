@@ -7,6 +7,8 @@ window.onload = function() {
             window.location.pathname === '/news' ? '/news/index.html' :
             window.location.pathname === '/about' ? '/html/about.html' :
             window.location.pathname === '/connect' ? '/html/connect.html' :
+            window.location.pathname === '/support' ? '/html/support.html' :
+            window.location.pathname === '/theapplecollection' ? '/html/theapplecollection.html' :
             '/404.html'
         );
     }
