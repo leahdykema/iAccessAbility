@@ -17,6 +17,11 @@ img.example-images.instruction-screenshot.active {
     display: block;
 }
 
+.img-and-text {
+    width: 100%;
+    justify-content: space-between;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -92,6 +97,7 @@ img.example-images.instruction-screenshot.active {
 
     div.img-and-text {
         display: flex;
+        width: 100%;
         margin-bottom: 20px;
     }
 
@@ -113,7 +119,7 @@ img.example-images.instruction-screenshot.active {
     }
 
     img.example-images {
-        margin: auto;
+        justify-content: flex-end;
         padding-top: 30px;
         height: 300px;
     }
@@ -350,6 +356,7 @@ img.example-images.instruction-screenshot.active {
 
     div.img-and-text {
         display: flex;
+        width: 100%;
         margin-bottom: 25px;
     }
 
@@ -749,6 +756,7 @@ img.example-images.instruction-screenshot.active {
 
     div.img-and-text {
         display: flex;
+        width: 100%;
         margin-bottom: 25px;
     }
 
