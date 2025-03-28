@@ -4,6 +4,7 @@
         background-color: #000;
         margin-top: 80px;
         color: #fff;
+        word-break: break-word;
     }
     
     h1 {
@@ -15,6 +16,10 @@
     h2 {
         font-weight: 600;
         color: #ddd;
+    }
+    
+    p {
+        font-size: 20px;
     }
     
     .description {
@@ -127,6 +132,208 @@
         a.links:hover,
         a.links:focus {
             color: #0063cc;
+            transform: scale(1.4);
+        }
+    }
+    
+    @media (max-width: 1366px) {
+        h2,
+        .service-name,
+        .review-content {
+            opacity: 100;
+        }
+    }
+    
+    @media (max-width: 1024px) {
+        article.review {
+            margin-left: 23%;
+            margin-right: 23%;
+        }
+        
+        footer.info {
+            margin-left: 23%;
+            margin-right: 23%;
+        }
+        
+        @media (hover: hover) {
+            article.review:hover::before,
+            article.review:hover,
+            article.review:hover h2,
+            article.review:hover .service-name,
+            article.review:hover .review-content,
+            article.review:hover blockquote,
+            article.review:hover footer {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    }
+    
+    @media (max-width: 768px) {
+        h1 {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 2.3rem
+        }
+        
+        .description {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        
+        article.review {
+            margin-left: 10%;
+            margin-right: 10%;
+            opacity: 1;
+        }
+        
+        h2,
+        .service-name,
+        .review-content {
+            opacity: 100;
+        }
+        
+        footer.info {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #fff;
+        margin-top: 80px;
+        color: #000;
+        word-break: break-word;
+    }
+    
+    h1 {
+        margin-bottom: 10px;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    h2 {
+        font-weight: 600;
+        color: #444;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .description {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    article.review::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: 10px;
+        border: 5px solid transparent;
+        background: linear-gradient(120deg, #8bc3ff, #0040cc) border-box;
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+    }
+    
+    article.review {
+        background-color: #eee;
+        position: relative;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-name {
+        color: #000;
+        font-weight: bold;
+    }
+    
+    h2,
+    .service-name,
+    .review-content {
+        opacity: 0.7;
+        transition: opacity 0.3s ease-in-out;
+    }
+    
+    blockquote {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 10px 0;
+    }
+
+    blockquote p {
+        margin-bottom: 10px;
+    }
+    
+    footer {
+        margin-top: 10px;
+        text-align: right;
+        font-size: 1rem;
+        color: #888;
+    }
+    
+    .divider {
+        width: 100px;
+        height: 1px;
+        background: linear-gradient(120deg, #8bc3ff, #0040cc);
+        border: none;
+        margin: 10px auto;
+    }
+    
+    footer.info {
+        background-color: #eee;
+        margin-top: 20px;
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-bottom: 40px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    a.links {
+        text-decoration: none;
+        color: #0063cc;
+        transition: all 200ms ease;
+    }
+    
+    @media (hover: hover) {
+        article.review:hover::before {
+            opacity: 1;
+        }
+        
+        article.review:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 64, 204, 0.5);
+        }
+        
+        article.review:hover h2,
+        article.review:hover .service-name,
+        article.review:hover .review-content,
+        article.review:hover blockquote,
+        article.review:hover footer {
+            cursor: default;
+            opacity: 1;
+        }
+        
+        a.links:hover,
+        a.links:focus {
+            text-decoration: underline;
             transform: scale(1.4);
         }
     }
